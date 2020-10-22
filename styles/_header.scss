@@ -1,0 +1,167 @@
+.mainHeader{
+  background-image: url("../Resources/image2.jpg");
+  height: 100vh;
+  width: 100%;
+  background-position: 0% 45%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+
+  .header{
+    padding-bottom: 43vh;
+    padding-left: 13.3vh;
+    display: flex;
+    flex: row;
+    height: 50px;
+
+      &__logo{
+        padding: 7%;
+        width: 44%;
+      }
+
+      &__sections{
+        margin: 3.3vh;
+        padding-top: 4%;
+        font-family: $headerfont;
+        color: white;
+        text-decoration: none;
+      }
+
+      &__profile{
+        width: 36px;
+        margin-top: 64px;
+        margin-left: 17vh;
+      }
+
+      &__shop{
+        width: 36px;
+        margin-top: 62px;
+        margin-left: 4.5vh;
+        position: absolute;
+      }
+
+      &__shopDos{
+        display: none;
+      }
+  }
+  .camera{
+    padding-left: 3.5%;
+    width: 53%;
+  }
+
+  .menu{
+    display: none;
+    width: 13%;
+    position: absolute;
+    top: 46px;
+    left: 39px;
+    cursor: pointer;
+  }
+
+  .banner{
+    display: flex;
+    flex: row;
+    padding-left: 7%;
+    padding-top: 1%;
+
+    &__title{
+      padding-right: 37%;
+      font-family: $font;
+      color: white;
+      font-size: 4vh;
+    }
+
+    &__buttom{
+      width: 25vh;
+      height: 6vh;
+      font-size: 17px;
+      background-color: $yellow;
+      font-family: $font;
+      border: 0;
+      box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.50);
+    }
+  }
+
+}
+
+@media (max-width: 425px){
+  
+  .mainHeader{
+    height: 101vh;
+    background-position: 23% 71%;
+    background-size: 275%;
+
+    .header{
+      padding-bottom: 61vh;
+
+      &__logo{
+        margin-left: 35%;
+        margin-top: 17%;
+        width: 55%;
+      }
+
+      &__menu {
+        display: block;
+        position: absolute;
+        left: 37px;
+        top: 50px;
+    }
+  
+      &__sections{
+        display: none;
+      }
+
+      &__profile{
+        display: none;
+      }
+
+      &__shop{
+        display: none;
+      }
+
+      &__shopDos{
+        display: block;
+        width: 34px;
+        margin-top: 69px;
+        margin-left: 14.5vh;
+      }
+
+    }
+  
+      .camera{
+        width: 75%;
+      }
+
+      .menu{
+        display: flex;
+        top: 81px;
+      }
+    
+      .banner{
+  
+        &__title{
+          display: none;
+        }
+    
+        &__buttom{
+          width: 25vh;
+          height: 6vh;
+          font-size: 15px;
+          margin-left: 3%;
+        }
+  
+      }
+  }
+  
+}
+
+@media (max-width: 360px){
+  
+  .mainHeader{
+    height: 101vh;
+    background-position: 41% 71%;
+    background-size: 275%;
+  }
+  
+}

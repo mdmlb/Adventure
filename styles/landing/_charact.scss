@@ -1,0 +1,129 @@
+.charact{
+    background-image: url("../Resources/CharactBackground.jpg");
+    height: 216vh;
+    background-size: cover;
+
+    &__title{
+        font-size: 30px;
+        text-align: center;
+        padding-top: 18%;
+        font-style: italic;
+        font-family: $font;
+        letter-spacing: 8px;
+    }
+
+    &__textOne{
+        position: absolute;
+        padding-top: 12%;
+        padding-left: 40.4%;
+        opacity: 0;
+    }
+
+    .textopacity{
+        opacity: 1;
+    }
+    
+
+    &__textTwo{
+        width: 26%;
+        position: absolute;
+        padding-top: 69%;
+        padding-left: 9%;
+        opacity: 0;
+    }
+
+
+    &__textThree{
+        width: 90%;
+        position: absolute;
+        padding-top: 69%;
+        padding-left: 72%;
+        text-align: right;
+        opacity: 0;
+    }
+
+    &__dotOne{
+        position: absolute;
+        width: 54%;
+        padding-top: 20%;
+        padding-left: 48%;
+    }
+
+    &__dotTwo{
+        position: absolute;
+        width: 15%;
+        padding-top: 46%;
+        padding-left: 9%;
+    }
+
+    &__dotThree{
+        position: absolute;
+        width: 90%;
+        padding-top: 46%;
+        padding-left: 84%;
+    }
+    
+    &__img{
+        padding-left: 44vh;
+        position: absolute;
+        padding-top: 22%;
+    }
+
+    
+}
+
+@media (max-width: 425px){
+    .charact{
+        height: 100vh;
+    
+        &__title{
+            font-size: 102%;
+            text-align: center;
+            padding-top: 18%;
+        }
+    
+        &__textOne{
+            padding-top: 27%;
+            padding-left: 28.4%;
+            font-size: 62%;
+        }
+    
+        &__textTwo{
+            width: 46%;
+            padding-top: 104%;
+            padding-left: 9%;
+            font-size: 62%;
+        }
+    
+        &__textThree{
+            width: 91%;
+            padding-top: 104%;
+            padding-left: 53%;
+            font-size: 62%;
+        }
+    
+        &__dotOne{
+            padding-top: 41%;
+        }
+    
+        &__dotTwo{
+            padding-top: 75%;
+        }
+    
+        &__dotThree{
+            padding-top: 75%;
+        }
+        
+        &__img{
+            padding-left: 14vh;
+            padding-top: 49%;
+            width: 77%;
+        }
+    }
+}
+
+@media (max-width: 360px){
+    .charact{
+        height: 100vh;
+    }
+}

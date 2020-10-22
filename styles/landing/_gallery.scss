@@ -1,0 +1,35 @@
+.gallery{
+    background-image: url("../Resources/GalleryBackground.jpg");
+    height: 171vh;
+    background-size: cover;
+
+    &__title{
+        font-size: 30px;
+        text-align: center;
+        padding-top: 5%;
+        font-style: italic;
+        font-family: $font;
+        letter-spacing: 8px;
+    }
+
+}
+
+@media (max-width: 425px){
+
+    .gallery{
+        height: 93vh;
+    
+        &__title{
+            font-size: 102%;
+            text-align: center;
+            padding-top: 18%;
+        }
+    }
+}
+
+@media (max-width: 360px){
+
+    .gallery{
+        height: 100vh;
+    }
+}

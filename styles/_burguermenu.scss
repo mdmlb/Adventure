@@ -1,0 +1,50 @@
+
+.burguermenu{
+    background-color: $black;
+    width: 60%;
+    height: 100%;
+    display: flex;
+    transform: translate(-100%,0);
+    top: 0;
+    flex-direction: column;
+    align-self: center;
+    position: fixed;
+    transition: 0.3s ease-in-out;
+
+    &--move{
+        transform: translate(0,0);
+        transition: 0.3s ease-in;
+    }
+
+    &__content{
+        display: flex;
+        flex-direction: column;
+        padding: 106px 0;
+        align-self: center;
+    }
+
+    &__logo{
+        width: 51%;
+        margin-left: 24%;
+    }
+
+    &__sectionscontainer{
+        margin-top: 30%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__sections{
+        font-family: $font;
+        font-size: 15px;
+        color: $white;
+        text-align: center;
+
+        &--current{
+            transition: 0.5s ease;
+            font-weight: bolder;
+        }
+    }
+    
+}

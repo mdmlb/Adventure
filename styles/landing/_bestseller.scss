@@ -1,0 +1,66 @@
+.bestSeller{
+    display: flex;
+    flex-direction: column;
+
+    &__title{
+        background-image: url("../Resources/bestsellerBackground.jpg");
+        height: 48vh;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .cont{
+        background-image: url("../Resources/productBackground.jpg");
+        height: 129vh;
+        background-size: cover;
+        background-position: center;
+
+        &__title{
+            padding-top: 30%;
+            padding-left: 27%;
+            width: 152vh;
+        }
+    }
+
+}
+
+@media (max-width: 425px){
+
+    .bestSeller{
+    
+        &__title{
+            height: 38vh;
+        }
+
+        .cont{
+            height: 44vh;
+    
+            &__title{
+                padding-top: 36%;
+                padding-left: 21%;
+                width: 44vh;
+            }
+        }
+    }
+
+}
+
+@media (max-width: 360px){
+
+    .bestSeller{
+    
+        &__title{
+            height: 29vh;
+        }
+
+        .cont{
+            height: 46vh;
+    
+            &__title{
+                padding-top: 40%;
+                width: 44vh;
+            }
+        }
+    }
+
+}
