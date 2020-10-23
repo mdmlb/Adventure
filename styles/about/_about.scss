@@ -1,0 +1,47 @@
+
+//Universal Header
+.about{
+    height: 871px;
+    width: 100%;
+    background-image: url("../../resources/aboutbackground.jpg");
+    background-size: cover;
+    background-position: center;
+    
+}
+
+.description{
+    padding-top: 77px;
+    padding-left: 762px;
+
+    &__cont{
+        width: 428px;
+        height: 510px;
+        background-color: $black2;
+        box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.25);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__logo{
+        width: 247px;
+        margin-bottom: 53px;
+    }
+
+    &__text{
+        width: 371px;
+    }
+
+    &__title{
+        text-align: left;
+        font-size: 35px;
+        font-weight: 600;
+        margin-bottom: 14px;
+    }
+
+    &__p{
+        font-size: 17px;
+    }
+}
+  

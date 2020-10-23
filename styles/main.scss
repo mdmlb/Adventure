@@ -6,6 +6,8 @@ $yellow : #F0B606;
 $black: #080808;
 $white: white;
 
+$black2: #161616;
+
 //fonts
 $headerfont: "Poppins";
 $font: "Montserrat";
@@ -16,6 +18,7 @@ $buttomfont: $font;
 @import './footer';
 @import './dark';
 @import './burguermenu';
+
 @import './landing/bestseller';
 @import './landing/charact';
 @import './landing/gallery';
@@ -24,6 +27,8 @@ $buttomfont: $font;
 @import './landing/newsletter';
 @import './landing/promo';
 @import './landing/table';
+
+@import './about/about';
 
 body{
     font-family: $font;
