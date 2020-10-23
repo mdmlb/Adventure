@@ -4,78 +4,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
-    <title>Adventure</title>
-    <link rel="stylesheet" href=".styles/main.css">
-
+    <link rel="stylesheet" href="./styles/main.css">
+    <title>Adventure | About</title>
 </head>
 
 <body>
-    <header class="mainHeader">
+    <header class="universalHeader">
 
-        <!--Nav-->
-        <section class="header">
+        <nav class="universalHeader__nav">
 
             <!--Nav: Shop-->
-            <a href="/"><img class="header__shopDos" src="./Resources/shop.png" atl="Shop">
+            <a href="/" class="universalHeader__shopLinksTwo">
+                <img class="universalHeader__shopTwo" src="./Resources/shop.png" atl="Shop">
             </a>
 
             <!--Nav: Logo-->
-            <a href="./index.html"><img class="header__logo" src="./Resources/LOGO W.png" atl="Adventure's logo">
+            <a href="./index.html" class="universalHeader__link">
+                <img class="universalHeader__logo" src="./Resources/LOGO W.png" atl="Adventure's logo">
             </a>
 
             <!--Nav: Products-->
-            <selection class="header__sections">
-                <a href="./cameras.html" class="header__sections">CAMERAS</a>
-                <a href="./accessories.html" class="header__sections">ACCESSORIES</a>
-                <a href="./about.html" class="header__sections">ABOUT US</a>
-            </selection>
+            <section class="universalHeader__cont">
+                <a href="./cameras.html" class="universalHeader__sections">CAMERAS</a>
+                <a href="./accessories.html" class="universalHeader__sections">ACCESSORIES</a>
+                <a href="./about.html" class="universalHeader__sections">ABOUT US</a>
+            </section>
 
-            <!--Nav: Profile-->
-            <a href="./about.html"><img class="header__profile" src="./Resources/profile.png" atl="Profile">
-            </a>
 
-            <!--Nav: Shop-->
-            <a href="/"><img class="header__shop" src="./Resources/shop.png" atl="Shop">
-            </a>
+            <section class="universalHeader__contTwo">
+                <!--Nav: Profile-->
+                <a href="./about.html" class="universalHeader__profileLink">
+                    <img class="universalHeader__profile" src="./Resources/profile.png" atl="Profile">
+                </a>
 
-        </section>
+                <!--Nav: Shop-->
+                <a href="/" class="universalHeader__shopLink">
+                    <img class="universalHeader__shop" src="./Resources/shop.png" atl="Shop">
+                </a>
+            </section>
 
-        <!--Nav: Burguer's menu-->
-        <img src="./Resources/menu.png" alt="" class="menu">
+
+            <!--Nav: Burguer's menu-->
+            <img src="./Resources/menu.png" alt="" class="menu">
+
+        </nav>
+
 
     </header>
 
-    <main class="main">
+    <main class="about">
 
-        <!--Best Seller-->
-        <article class="bestSeller">
+        <!--About-->
+        <article class="description">
 
-            <!--BestSeller First: Tittle-->
-            <section class="bestSeller__title"> </section>
+            <section class="descripconAbout">
+                <!--About: Icon-->
+                <img src="./Resources/LOGO W.png" alt="" class="descripconAbout__logo">
 
-            <section class="cont">
-                <img src="./Resources/NikonTitle.png" alt="" class="cont__title">
+                <!--About: Title-->
+                <h1 class="descripconAbout__title"></h1>
+
+                <!--About: Text-->
+                <p class="descripconAbout__p"></p>
             </section>
 
 
-            <!--BestSeller Second: Characteristics-->
-            <section class="charact">
-
-                <h1 class="charact__title">CHARACTERISTICS</h1>
-
-                <div class="charact__product">
-                    <p class="charact__textOne">Film speed range of ISO 25 to 3,200</p>
-                    <P class="charact__textTwo">1/2,000 second top shutter speed and 1/125 second top
-                        sync speed</P>
-                    <P class="charact__textThree">Manual exposure control with built-in exposure meter
-                        (Center-weighted)</P>
-                    <img src="./Resources/Nikon.webp" class="charact__img" alt="">
-                    <img src="./Resources/dotInnactive.png" class="charact__dotThree" alt="">
-                    <img src="./Resources/dotInnactive.png" class="charact__dotOne" alt="">
-                    <img src="./Resources/dotInnactive.png" class="charact__dotTwo" alt="">
-                </div>
-
-            </section>
+        </article>
 
     </main>
 
@@ -152,7 +146,8 @@
         <section class="burguermenu__content">
             <img src="./Resources/LOGO W.png" alt="" class="burguermenu__logo">
             <div class="burguermenu__sectionscontainer">
-                <a href="index.html" class="burguermenu__sections burguermenu__sections--current">PRINCIPAL PAGE</span></a>
+                <a href="index.html" class="burguermenu__sections burguermenu__sections--current">PRINCIPAL
+                    PAGE</span></a>
                 <a href="./html/cameras.html" class="burguermenu__sections">CAMERAS</a>
                 <a href="./html/accessories.html" class="burguermenu__sections">ACCESSORIES</a>
                 <a href="./html/about.html" class="burguermenu__sections">ABOUT US</a>
@@ -168,8 +163,6 @@
     <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-firestore.js"></script>
     <script src="./scripts/products.js"></script>
-    <script src="./scripts/main.js"></script>
-
 </body>
 
 </html>
