@@ -1,13 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
-    <title>Adventure</title>
     <link rel="stylesheet" href="./styles/main.css">
+    <title>Adventure | About</title>
 </head>
+
 <body>
-    
-    
+    <header class="universalHeader">
+
+        <nav class="universalHeader__nav">
+
+            <!--Nav: Shop-->
+            <a href="/" class="universalHeader__shopLinksTwo">
+                <img class="universalHeader__shopTwo" src="./Resources/shop.png" atl="Shop">
+            </a>
+
+            <!--Nav: Logo-->
+            <a href="./index.html" class="universalHeader__link">
+                <img class="universalHeader__logo" src="./Resources/LOGO W.png" atl="Adventure's logo">
+            </a>
+
+            <!--Nav: Products-->
+            <section class="universalHeader__cont">
+                <a href="./cameras.html" class="universalHeader__sections">CAMERAS</a>
+                <a href="./accessories.html" class="universalHeader__sections">ACCESSORIES</a>
+                <a href="./about.html" class="universalHeader__sections">ABOUT US</a>
+            </section>
+
+
+            <section class="universalHeader__contTwo">
+                <!--Nav: Profile-->
+                <a href="./login.html" class="universalHeader__profileLink">
+                    <img class="universalHeader__profile" src="./Resources/profile.png" atl="Profile">
+                </a>
+
+                <!--Nav: Shop-->
+                <a href="/" class="universalHeader__shopLink">
+                    <img class="universalHeader__shop" src="./Resources/shop.png" atl="Shop">
+                </a>
+            </section>
+
+
+            <!--Nav: Burguer's menu-->
+            <img src="./Resources/menu.png" alt="" class="menu">
+
+        </nav>
+
+
+    </header>
+
+    <main class="products">
+
+
+
+    </main>
+
+    <footer class="footer">
+
+        <article class="contain">
+
+            <div class="cont">
+
+                <div class="logo">
+                    <!--Logo-->
+                    <img class="logo__img" src="./Resources/LOGO W.png" alt="">
+                </div>
+
+                <!--Links to the rest of the website-->
+
+                <div class="left">
+
+                    <!--Products/Cameras Accesories-->
+                    <div class="infoOne">
+                        <h1 class="infoOne__title">Products</h1>
+                        <div class="containe">
+                            <a href="" class="containe__link">Cameras</a>
+                            <a href="" class="containe__link">Accesories</a>
+                        </div>
+
+                    </div>
+
+                    <!--Informaction/About Us-->
+                    <div class="infoTwo">
+                        <h1 class="infoTwo__title">Information</h1>
+                        <div class="conta">
+                            <a href="" class="cont__link">About Us</a>
+                        </div>
+
+                    </div>
+
+                    <!--Social Media-->
+                    <div class="infoThree">
+                        <h1 class="infoThree__title">Follow us</h1>
+                        <div class="media">
+                            <a href="" class="infoThree__facebook"> <img src="" alt="">
+                                <img src="./Resources/facebook.png" class="infoThree__icono" alt="facebook">
+                            </a>
+                            <a href="" class="infoThree__instagram"> <img src="" alt="">
+                                <img src="./Resources/instagram.png" class="infoThree__icono" alt="instagram">
+                            </a>
+                            <a href="" class="infoThree__twitter"> <img src="" alt="">
+                                <img src="./Resources/twitter.png" class="infoThree__icono" alt="twitter">
+                            </a>
+                            <a href="" class="infoThree__pinterest"> <img src="" alt="">
+                                <img src="./Resources/pinterest.png" class="infoThree__icono" alt="pinterest">
+                            </a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </article>
+
+
+    </footer>
+
+    <!-- background 2.0 -->
+    <div class="dark"></div>
+
+    <!-- Burger's menu -->
+    <div class="burguermenu">
+        <section class="burguermenu__content">
+            <img src="./Resources/LOGO W.png" alt="" class="burguermenu__logo">
+            <div class="burguermenu__sectionscontainer">
+                <a href="index.html" class="burguermenu__sections burguermenu__sections--current">PRINCIPAL
+                    PAGE</span></a>
+                <a href="./html/cameras.html" class="burguermenu__sections">CAMERAS</a>
+                <a href="./html/accessories.html" class="burguermenu__sections">ACCESSORIES</a>
+                <a href="./html/about.html" class="burguermenu__sections">ABOUT US</a>
+                <a href="" class="burguermenu__sections">PROFILE</a>
+
+            </div>
+
+
+        </section>
+    </div>
+
+
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-firestore.js"></script>
+    <script src="./scripts/products.js"></script>
 </body>
+
 </html>

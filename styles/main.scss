@@ -5,8 +5,7 @@
 $yellow : #F0B606;
 $black: #080808;
 $white: white;
-
-$black2: #161616;
+$grey:  #161616;
 
 //fonts
 $headerfont: "Poppins";
@@ -18,6 +17,8 @@ $buttomfont: $font;
 @import './footer';
 @import './dark';
 @import './burguermenu';
+@import './inputs';
+@import './buttons';
 
 @import './landing/bestseller';
 @import './landing/charact';
@@ -29,6 +30,11 @@ $buttomfont: $font;
 @import './landing/table';
 
 @import './about/about';
+
+@import './products/products';
+
+@import './login';
+@import './signin';
 
 body{
     font-family: $font;

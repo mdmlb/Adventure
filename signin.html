@@ -52,28 +52,39 @@
 
     </header>
 
-    <main class="products">
+    <main class="signin">
 
-        <!--Filter-->
-        <article class="filter">
-        </article>
+        <section class="signin__cont">
 
-        <!--Filter-->
-        <article class="sort">
+            <form class="formSign">
+                <h2 class="formSign__title">Welcome to the adventure!</h2>
 
-        </article>
+                <div class="formSign__cont">
 
-        <section class="productslist">
+                    <label class="formSign__label">
+                        <input type="text" name="name" placeholder="Name" class="input">
+                    </label>
 
-            <article class="product">
-                <img class="product__img" src="../Images/LipstickPromo.jpg" alt="product">
-                <h3 class="product__title">Rouge Allure Velvet</h3>
-                <p class="product__brand">Coco Chanel</p>
-                <p class="product__type">Labial</p>
-                <p class="product__color">Rojo</p>
-                <p class="product__price">$150.000</p>
-                <button class="btnPrimary btnPrimary--shop">Comprar</button>
-            </article>
+                    <label class="formSign__label">
+                        <input type="email" name="email" placeholder="Email" class="input">
+                    </label>
+
+                    <label class="formSign__label">
+                        <input type="password" name="password" placeholder="Password" class="input">
+                    </label>
+
+                    <label class="formSign__label">
+                        <input type="password" name="confirmpassword" placeholder="Confirm Password" class="input">
+                    </label>
+                </div>
+
+
+                <button class="button">
+                    Sign up
+                </button>
+
+                <a href="./login.html" class="formSign__bottom">Wait! ... I already have an account</a>
+            </form>
 
         </section>
 

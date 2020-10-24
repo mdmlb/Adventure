@@ -1,0 +1,10 @@
+.input{
+    border: none;
+    height: 36px;
+    width: 378px;
+
+    &::placeholder{
+        font-family: $font;
+        padding-left: 20px;
+    }
+}

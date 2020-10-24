@@ -305,7 +305,7 @@ input[type=button] {
 }
 
 .mainHeader .header__sections:hover {
-  text-decoration: underline;
+  color: #F0B606;
 }
 
 .mainHeader .header__contTwo {
@@ -440,7 +440,7 @@ input[type=button] {
 }
 
 .universalHeader__sections:hover {
-  text-decoration: underline;
+  color: #F0B606;
 }
 
 .universalHeader__profile {
@@ -450,6 +450,10 @@ input[type=button] {
         margin-top: 64px;
         margin-left: 17vh;
         */
+}
+
+.universalHeader__profile:hover {
+  width: 40px;
 }
 
 .universalHeader__shop {
@@ -859,6 +863,43 @@ input[type=button] {
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
   font-weight: bolder;
+}
+
+.input {
+  border: none;
+  height: 36px;
+  width: 378px;
+}
+
+.input::-webkit-input-placeholder {
+  font-family: "Montserrat";
+  padding-left: 20px;
+}
+
+.input:-ms-input-placeholder {
+  font-family: "Montserrat";
+  padding-left: 20px;
+}
+
+.input::-ms-input-placeholder {
+  font-family: "Montserrat";
+  padding-left: 20px;
+}
+
+.input::placeholder {
+  font-family: "Montserrat";
+  padding-left: 20px;
+}
+
+.button {
+  width: 57vh;
+  height: 6vh;
+  font-size: 17px;
+  background-color: #F0B606;
+  font-family: "Montserrat";
+  border: 0;
+  -webkit-box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.5);
 }
 
 .bestSeller {
@@ -1493,7 +1534,7 @@ input[type=button] {
 .about {
   height: 871px;
   width: 100%;
-  background-image: url("../../resources/aboutbackground.jpg");
+  background-image: url("../resources/aboutbackground.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -1542,6 +1583,146 @@ input[type=button] {
 
 .description__p {
   font-size: 17px;
+}
+
+.products {
+  height: 100vh;
+  width: 100%;
+  background-color: #F1F1F1;
+}
+
+.login {
+  background-image: url("../resources/loginBackground.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 131vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.login__cont {
+  width: 120vh;
+  height: 78vh;
+  background-color: #161616;
+}
+
+.formLog {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 120vh;
+  height: 78vh;
+  padding: 10vh;
+}
+
+.formLog__title {
+  font-size: 35px;
+  font-weight: 500;
+}
+
+.formLog__cont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 20px;
+}
+
+.formLog__label {
+  margin-bottom: 19px;
+}
+
+.formLog__bottom {
+  font-size: 19px;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+}
+
+.signin {
+  background-image: url("../resources/loginBackground.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 131vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.signin__cont {
+  width: 120vh;
+  height: 89vh;
+  background-color: #161616;
+}
+
+.formSign {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 120vh;
+  height: 89vh;
+  padding: 10vh;
+}
+
+.formSign__title {
+  font-size: 35px;
+  font-weight: 500;
+}
+
+.formSign__cont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 20px;
+}
+
+.formSign__label {
+  margin-bottom: 19px;
+}
+
+.formSign__bottom {
+  font-size: 19px;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
 }
 
 body {

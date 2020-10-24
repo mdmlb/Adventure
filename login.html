@@ -52,28 +52,30 @@
 
     </header>
 
-    <main class="products">
+    <main class="login">
 
-        <!--Filter-->
-        <article class="filter">
-        </article>
+        <section class="login__cont">
 
-        <!--Filter-->
-        <article class="sort">
+            <form class="formLog">
+                <h2 class="formLog__title">Welcome back!</h2>
 
-        </article>
+                <div class="formLog__cont">
+                    <label class="formLog__label">
+                        <input type="email" name="email" placeholder="Email" class="input">
+                    </label>
 
-        <section class="productslist">
+                    <label class="formLog__label">
+                        <input type="password" name="password" placeholder="Password" class="input">
+                    </label>
+                </div>
 
-            <article class="product">
-                <img class="product__img" src="../Images/LipstickPromo.jpg" alt="product">
-                <h3 class="product__title">Rouge Allure Velvet</h3>
-                <p class="product__brand">Coco Chanel</p>
-                <p class="product__type">Labial</p>
-                <p class="product__color">Rojo</p>
-                <p class="product__price">$150.000</p>
-                <button class="btnPrimary btnPrimary--shop">Comprar</button>
-            </article>
+
+                <button class="button">
+                    Log in
+                </button>
+
+                <a href="./signin.html" class="formLog__bottom">Wait! ... I don’t have an account</a>
+            </form>
 
         </section>
 
