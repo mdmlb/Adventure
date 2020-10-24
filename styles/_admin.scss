@@ -1,0 +1,56 @@
+.profileAdmin{
+    background-color: $grey;
+    width: 120vh;
+    height: 78vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__cont{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__title{
+        font-size: 35px;
+        font-weight: 500;
+        text-align: center;
+    }
+
+    &__p{
+        width: 377px;
+        font-size: 15px;
+        text-align: center;
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+
+    &__btnCont{
+        width: 625px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    &__button{
+        width: 36vh;
+        height: 6vh;
+        font-size: 17px;
+        background-color: $yellow;
+        font-family: $font;
+        border: 0;
+        box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.50);
+    }
+
+    &__btnT{
+        color: black;
+        text-decoration: none;
+    }
+    
+    &__button:hover {
+        background-color: $yellowTwo;
+    }
+   
+}

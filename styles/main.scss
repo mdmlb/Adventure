@@ -3,6 +3,7 @@
 
 //Colors
 $yellow : #F0B606;
+$yellowTwo : #ffd900;
 $black: #080808;
 $white: white;
 $grey:  #161616;
@@ -17,6 +18,8 @@ $buttomfont: $font;
 @import './footer';
 @import './dark';
 @import './burguermenu';
+
+
 @import './inputs';
 @import './buttons';
 
@@ -30,11 +33,13 @@ $buttomfont: $font;
 @import './landing/table';
 
 @import './about/about';
-
 @import './products/products';
 
 @import './login';
 @import './signin';
+
+@import './user';
+@import './admin';
 
 body{
     font-family: $font;
@@ -46,4 +51,14 @@ body{
 a{
     color: white;
     text-decoration: none;
+}
+
+.profile{
+    background-image: url('../resources/loginBackground.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 131vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

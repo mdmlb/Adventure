@@ -902,6 +902,15 @@ input[type=button] {
           box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.5);
 }
 
+.button__t {
+  color: black;
+  text-decoration: none;
+}
+
+.button:hover {
+  background-color: #ffd900;
+}
+
 .bestSeller {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1725,6 +1734,118 @@ input[type=button] {
           text-decoration-line: underline;
 }
 
+.profileUser {
+  background-color: #161616;
+  width: 120vh;
+  height: 78vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.profileUser__title {
+  font-size: 35px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.profileUser__name {
+  font-size: 45px;
+  color: #A6A5A5;
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.profileAdmin {
+  background-color: #161616;
+  width: 120vh;
+  height: 78vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.profileAdmin__cont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.profileAdmin__title {
+  font-size: 35px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.profileAdmin__p {
+  width: 377px;
+  font-size: 15px;
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.profileAdmin__btnCont {
+  width: 625px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.profileAdmin__button {
+  width: 36vh;
+  height: 6vh;
+  font-size: 17px;
+  background-color: #F0B606;
+  font-family: "Montserrat";
+  border: 0;
+  -webkit-box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.5);
+}
+
+.profileAdmin__btnT {
+  color: black;
+  text-decoration: none;
+}
+
+.profileAdmin__button:hover {
+  background-color: #ffd900;
+}
+
 body {
   font-family: "Montserrat";
   color: white;
@@ -1735,5 +1856,21 @@ body {
 a {
   color: white;
   text-decoration: none;
+}
+
+.profile {
+  background-image: url("../resources/loginBackground.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 131vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 /*# sourceMappingURL=main.css.map */
