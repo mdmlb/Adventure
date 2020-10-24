@@ -43,6 +43,7 @@ $buttomfont: $font;
 @import './admin/additem';
 @import './admin/admin';
 @import './admin/edititem';
+@import './admin/deleteitem';
 
 body{
     font-family: $font;

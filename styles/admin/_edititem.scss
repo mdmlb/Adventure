@@ -4,15 +4,15 @@
     height: 108vh;
     background-color: $grey;
     display: flex;
-    top: 0;
     transition: 0.3s ease-in-out;
     position: fixed;
+    top: 109px;
 
     &--show{
         transform: translate(0,0);
         transition: 0.3s ease-in;
-        position: fixed;
-        top: -21px;
+        //position: fixed;
+        top: 109px;
         left: 379PX;
     }
 
