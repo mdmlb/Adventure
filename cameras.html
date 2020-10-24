@@ -75,8 +75,15 @@
         <!--Products-->
         <section class="productlist">
 
-            <article class="product">
-                <img class="product__img" src="./resources/Nikon.webp">
+            <article class="product--admin">
+                <!--ADMIN ACTIONS-->
+                <div class="product__cont">
+                    <img class="product__edit" src="./resources/edit.png" alt="">
+
+                    <img class="product__delete" src="./resources/delete.png" alt="">
+                </div>
+
+                <img class="product__img" src="./resources/Nikon.webp" alt="">
                 <h1 class="product__title">Nikon FM 10</h1>
                 <p class="product__price">$3.449.000</p>
                 <button class="button__userAdd">Add to cart</button>
@@ -151,7 +158,7 @@
 
     </footer>
 
-    <!-- background 2.0 -->
+    <!-- background -->
     <div class="dark"></div>
 
     <!-- Burger's menu -->
@@ -171,6 +178,58 @@
 
         </section>
     </div>
+
+    <!-- Edit item -->
+    <section class="edit">
+
+        <form class="editItem">
+
+            <img class="editItem__exit" src="./resources/exit.png" alt="">
+
+            <h2 class="editItem__title">Edit item</h2>
+
+            <div class="editItem__cont">
+
+                <label class="editItem__label">
+                    <input type="text" name="title" placeholder="Title" class="input">
+                </label>
+
+                <label class="editItem__label">
+                    <input type="text" name="price" placeholder="Price" class="input">
+                </label>
+
+                <label class="editItem__label">
+                    <input type="text" name="description" placeholder="Description" class="input">
+                </label>
+
+                <label class="editItem__label">
+                    <input type="text" name="brand" placeholder="Brand" class="input">
+                </label>
+
+                <label class="editItem__label">
+                    <input type="text" name="type" placeholder="Type" class="input">
+                </label>
+
+                <select name="option" id="" class="editItem__option">
+                    <option value="camera">Camera</option>
+                </select>
+
+                <label class="editItem__upload">
+                    <input type="file" name="image" placeholder="Upload photos" class="editItem__input"
+                        accept="image/png, image/jpg">
+                </label>
+
+            </div>
+
+            <p class="editItem__p">If you upload more photos, the previous ones will be deleted.</p>
+
+            <button class="button">
+                Edit
+            </button>
+
+        </form>
+
+    </section>
 
 
     <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>

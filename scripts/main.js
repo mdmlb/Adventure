@@ -1,4 +1,4 @@
-
+    //LANDING
 //CHARACT
 const charact = document.querySelector('.charact');
 const charactText1 = document.querySelector('.charact__textOne');
@@ -22,9 +22,6 @@ charactDot1.addEventListener('click', function(){
 
     charactText1.classList.toggle("textopacity");
 });
-
-
-
 
 charactDot2.addEventListener('click', function(){
     const img1 = './Resources/dotInnactive.png';
@@ -59,8 +56,6 @@ charactDot3.addEventListener('click', function(){
     console.log("Boton 3");
 });
 
-
-
 //GALLERY
 const carrousel = document.querySelector('.carrousel');
 const carrouselStripe = document.querySelector('.carrousel__stripe');
@@ -72,28 +67,10 @@ carrouselSlider.addEventListener('input', function() {
   carrouselStripe.style.transform = 'translate(-' + (width * value) + 'px, 0px)';
 });
 
-//MENU
-const menuactive = document.querySelector('.menu');
-const menu = document.querySelector('.burguermenu');
-const dark = document.querySelector('.dark');
-
-menuactive.addEventListener('click', function() {
-  dark.classList.add("dark--active");
-  menu.classList.add("burguermenu--move");
-  //console.log();
-});
-
-dark.addEventListener('click', function(){
-    if(dark.classList.contains("dark--active") && menu.classList.contains("burguermenu--move")){ 
-      dark.classList.remove("dark--active"); 
-      menu.classList.remove("burguermenu--move")
-    }
-    
-});
-
 //SPECS
 const specs = document.querySelector('.specsBox');
 const modal = document.querySelector('.modal');
+const dark = document.querySelector('.dark');
 
 specs.addEventListener('click', function() {
   dark.classList.add("dark--active");
@@ -105,6 +82,26 @@ dark.addEventListener('click', function(){
     if(dark.classList.contains("dark--active") && modal.classList.contains("modal--move")){ 
       dark.classList.remove("dark--active"); 
       modal.classList.remove("modal--move")
+    }
+    
+});
+
+
+    //GLOBAL
+//MENU
+const menuactive = document.querySelector('.menu');
+const menu = document.querySelector('.burguermenu');
+
+menuactive.addEventListener('click', function() {
+  dark.classList.add("dark--active");
+  menu.classList.add("burguermenu--move");
+  //console.log();
+});
+
+dark.addEventListener('click', function(){
+    if(dark.classList.contains("dark--active") && menu.classList.contains("burguermenu--move")){ 
+      dark.classList.remove("dark--active"); 
+      menu.classList.remove("burguermenu--move")
     }
     
 });
