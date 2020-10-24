@@ -38,7 +38,8 @@ $buttomfont: $font;
 @import './login';
 @import './signin';
 
-@import './user';
+@import './user/user';
+@import './user/shop';
 
 @import './admin/additem';
 @import './admin/admin';
