@@ -54,25 +54,32 @@
 
     <main class="products">
 
-        <!--Filter-->
-        <article class="filter">
+        <article class="container">
+
+            <!--Filter-->
+            <select name="filter" id="" class="filter">
+                <option value="">Filter by</option>
+                <option value="brand">Brand</option>
+                <option value="type">Type</option>
+            </select>
+
+            <!--Sort-->
+            <select name="sort" id="" class="sort">
+                <option value="">Sort by</option>
+                <option value="brand">Brand</option>
+                <option value="price">Price</option>
+                <option value="recommended">Recommended</option>
+            </select>
         </article>
 
-        <!--Filter-->
-        <article class="sort">
-
-        </article>
-
-        <section class="productslist">
+        <!--Products-->
+        <section class="productlist">
 
             <article class="product">
-                <img class="product__img" src="../Images/LipstickPromo.jpg" alt="product">
-                <h3 class="product__title">Rouge Allure Velvet</h3>
-                <p class="product__brand">Coco Chanel</p>
-                <p class="product__type">Labial</p>
-                <p class="product__color">Rojo</p>
-                <p class="product__price">$150.000</p>
-                <button class="btnPrimary btnPrimary--shop">Comprar</button>
+                <img class="product__img" src="./resources/Nikon.webp">
+                <h1 class="product__title">Nikon FM 10</h1>
+                <p class="product__price">$3.449.000</p>
+                <button class="button__userAdd">Add to cart</button>
             </article>
 
         </section>

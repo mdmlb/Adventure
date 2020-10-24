@@ -1,0 +1,52 @@
+.add{
+    background-image: url('../resources/loginBackground.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 131vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__cont{
+        width: 120vh;
+        height: 101vh;
+        background-color: $grey;
+    }
+}
+
+.addItem{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 120vh;
+    height: 101vh;
+    padding: 10vh;
+
+    &__title{
+        font-size: 35px;
+        font-weight: 500;
+    }
+
+    &__cont{
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    &__label{
+        margin-bottom: 19px;
+    }
+
+    &__option{
+        border: none;
+        height: 36px;
+        width: 378px;
+        color: #4F4F4F;
+    }
+
+    &__upload{
+        margin: 23px 0px;
+    }
+   
+}

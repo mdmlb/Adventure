@@ -403,7 +403,6 @@ input[type=button] {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  position: fixed;
 }
 
 .universalHeader__link {
@@ -874,21 +873,25 @@ input[type=button] {
 .input::-webkit-input-placeholder {
   font-family: "Montserrat";
   padding-left: 20px;
+  border: none;
 }
 
 .input:-ms-input-placeholder {
   font-family: "Montserrat";
   padding-left: 20px;
+  border: none;
 }
 
 .input::-ms-input-placeholder {
   font-family: "Montserrat";
   padding-left: 20px;
+  border: none;
 }
 
 .input::placeholder {
   font-family: "Montserrat";
   padding-left: 20px;
+  border: none;
 }
 
 .button {
@@ -909,6 +912,22 @@ input[type=button] {
 
 .button:hover {
   background-color: #ffd900;
+}
+
+.button__userAdd {
+  width: 48vh;
+  height: 6vh;
+  font-size: 17px;
+  background-color: #F0B606;
+  font-family: "Montserrat";
+  border: 0;
+  -webkit-box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.5);
+}
+
+.button__userAdd__t {
+  color: black;
+  text-decoration: none;
 }
 
 .bestSeller {
@@ -1595,9 +1614,150 @@ input[type=button] {
 }
 
 .products {
-  height: 100vh;
+  height: 100%;
   width: 100%;
   background-color: #F1F1F1;
+}
+
+.container {
+  height: 20vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.filter {
+  border: none;
+  height: 36px;
+  width: 378px;
+  border: none;
+  height: 36px;
+  width: 248px;
+  color: #4F4F4F;
+  margin-left: 25vh;
+}
+
+.sort {
+  border: none;
+  height: 36px;
+  width: 378px;
+  border: none;
+  height: 36px;
+  width: 248px;
+  color: #4F4F4F;
+  margin-right: 25vh;
+}
+
+.productlist {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 65px;
+  margin-bottom: 75px;
+}
+
+.product {
+  background-color: white;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-bottom: 60px;
+  width: 48vh;
+  height: 52vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  /*
+    &--admin {
+        box-shadow: (0px 4px 4px rgba(0, 0, 0, 0.25));
+        margin-bottom: 45px;
+
+       
+
+        &__img {
+            width: 280px;
+            height: 300px;
+            object-fit: contain;
+            padding: 10px;
+        }
+        &__name {
+            margin-top: 20px;
+            font-size: $font-size-h4;
+            text-align: center;
+        }
+        &__brand {
+            margin-top: 10px;
+            margin-left: 30px;
+            font-size: $font-size-p-secondary;
+        }
+        &__type {
+            margin-top: 5px;
+            margin-left: 30px;
+            font-size: $font-size-p-secondary;
+        }
+        &__color {
+            margin-top: 5px;
+            margin-left: 30px;
+            font-size: $font-size-p-secondary;
+        }
+        &__price {
+            margin-top: 5px;
+            margin-left: 30px;
+            font-size: $font-size-p-secondary;
+        }
+    }*/
+}
+
+.product__img {
+  width: 35vh;
+  -o-object-fit: contain;
+     object-fit: contain;
+  padding: 10px;
+}
+
+.product__title {
+  width: 274px;
+  margin-top: -4px;
+  text-align: center;
+  color: #080808;
+  font-weight: bold;
+  font-size: 19px;
+}
+
+.product__price {
+  margin-top: 5px;
+  color: #080808;
 }
 
 .login {
@@ -1767,6 +1927,78 @@ input[type=button] {
   margin-bottom: 60px;
 }
 
+.add {
+  background-image: url("../resources/loginBackground.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 131vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.add__cont {
+  width: 120vh;
+  height: 101vh;
+  background-color: #161616;
+}
+
+.addItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 120vh;
+  height: 101vh;
+  padding: 10vh;
+}
+
+.addItem__title {
+  font-size: 35px;
+  font-weight: 500;
+}
+
+.addItem__cont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 20px;
+}
+
+.addItem__label {
+  margin-bottom: 19px;
+}
+
+.addItem__option {
+  border: none;
+  height: 36px;
+  width: 378px;
+  color: #4F4F4F;
+}
+
+.addItem__upload {
+  margin: 23px 0px;
+}
+
 .profileAdmin {
   background-color: #161616;
   width: 120vh;
@@ -1851,6 +2083,7 @@ body {
   color: white;
   margin: 0;
   scroll-behavior: smooth;
+  background-color: #F1F1F1;
 }
 
 a {

@@ -51,38 +51,51 @@
 
     </header>
 
-    <main class="signin">
+    <main class="add">
 
-        <section class="signin__cont">
+        <section class="add__cont">
 
-            <form class="formSign">
-                <h2 class="formSign__title">Welcome to the adventure!</h2>
+            <form class="addItem">
+                <h2 class="addItem__title">Add items</h2>
 
-                <div class="formSign__cont">
+                <div class="addItem__cont">
 
-                    <label class="formSign__label">
-                        <input type="text" name="name" placeholder="Name" class="input">
+                    <label class="addItem__label">
+                        <input type="text" name="title" placeholder="Title" class="input">
                     </label>
 
-                    <label class="formSign__label">
-                        <input type="email" name="email" placeholder="Email" class="input">
+                    <label class="addItem__label">
+                        <input type="text" name="price" placeholder="Price" class="input">
                     </label>
 
-                    <label class="formSign__label">
-                        <input type="password" name="password" placeholder="Password" class="input">
+                    <label class="addItem__label">
+                        <input type="text" name="description" placeholder="Description" class="input">
                     </label>
 
-                    <label class="formSign__label">
-                        <input type="password" name="confirmpassword" placeholder="Confirm Password" class="input">
+                    <label class="addItem__label">
+                        <input type="text" name="brand" placeholder="Brand" class="input">
                     </label>
+
+                    <label class="addItem__label">
+                        <input type="text" name="type" placeholder="Type" class="input">
+                    </label>
+
+                    <select name="option" id="" class="addItem__option">
+                        <option value="">Camera</option>
+                        <option value="">Accessory</option>
+                    </select>
+
+                    <label class="addItem__upload">
+                        <input type="file" name="image" placeholder="Upload photos" class="addItem__input"
+                            accept="image/png, image/jpg">
+                    </label>
+
                 </div>
 
 
                 <button class="button">
                     Sign up
                 </button>
-
-                <a href="./login.html" class="formSign__bottom">Wait! ... I already have an account</a>
             </form>
 
         </section>

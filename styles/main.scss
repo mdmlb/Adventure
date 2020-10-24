@@ -33,19 +33,22 @@ $buttomfont: $font;
 @import './landing/table';
 
 @import './about/about';
-@import './products/products';
+@import './products';
 
 @import './login';
 @import './signin';
 
 @import './user';
-@import './admin';
+
+@import './admin/additem';
+@import './admin/admin';
 
 body{
     font-family: $font;
     color: white;
     margin: 0;
     scroll-behavior: smooth;
+    background-color: #F1F1F1;
 }
 
 a{
