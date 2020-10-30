@@ -1,0 +1,106 @@
+.descriptionProduct{
+    background-image: url('../resources/fondo\ \(1\).jpg');
+    //background-image: url('../resources/loginBackground.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 132vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+
+    &__cont{
+        width: 157vh;
+        height: 88vh;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+//GALLERY OF PRODUCT
+.galleryDescrip{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    //background-color: chartreuse;
+    width: 89vh;
+    height: 71vh;
+    justify-content: space-between;
+    
+    .thumbs{
+        width: 19vh;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &__imgcont{
+            background-color: white;     
+            display: flex;
+            justify-content: center;  
+        }
+
+          &__img {
+
+            &:hover {
+              opacity: .7;
+              cursor: pointer;
+              border: 3px solid ;
+            }
+
+          }
+    }
+}
+
+.contImage{
+    position: relative;
+    width: 439px;
+    
+    &__image {
+        width: 100%;
+        box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.50);
+    }
+}
+
+//TEXT PRODUCT
+.descrip{
+    width: 65vh;
+    height: 71vh;
+    background-color: $grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__type{
+        font-size: 18px;
+        font-weight: 500;
+        width: 57vh;
+        //background-color: coral;
+    }
+
+    &__name{
+        font-size: 33px;
+        font-weight: 600;
+        font-style: italic;
+        width: 57vh;
+        margin: 14px 0px 0px 0px;
+        //background-color: plum;
+    }
+
+    &__price{
+        font-size: 22px;
+        font-weight: 300;
+        width: 57vh;
+        margin: 10px 0px 0px 0px;
+        //background-color: pink;
+    }
+
+    &__p{
+        font-size: 16px;
+        font-weight: 100;
+        width: 57vh;
+        margin: 31px 0px 26px 0px;
+        //background-color: green;
+    }
+}
