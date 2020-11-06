@@ -243,7 +243,7 @@ input[type=button] {
 }
 
 .mainHeader {
-  background-image: url("../Resources/image2.jpg");
+  background-image: url("../resources/image2.jpg");
   height: 105vh;
   width: 100%;
   background-position: 0% 45%;
@@ -541,7 +541,7 @@ input[type=button] {
 }
 
 .footer {
-  background-image: url("../Resources/footerbackground.jpg");
+  background-image: url("../resources/footerbackground.jpg");
   height: 60vh;
   background-size: cover;
   -webkit-box-pack: center;
