@@ -1721,6 +1721,12 @@ input[type=button] {
   font-size: 19px;
 }
 
+.product__title:hover {
+  opacity: .7;
+  cursor: pointer;
+  border: 3px solid;
+}
+
 .product__price {
   margin-top: 5px;
   color: #080808;

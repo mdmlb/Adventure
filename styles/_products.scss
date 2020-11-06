@@ -74,6 +74,12 @@
         color: $black;
         font-weight: bold;
         font-size: 19px;
+
+        &:hover {
+            opacity: .7;
+            cursor: pointer;
+            border: 3px solid ;
+        }
     }
 
     &__price{
