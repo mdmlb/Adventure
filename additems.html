@@ -56,7 +56,7 @@
         <section class="add__cont">
 
             <form class="addItem">
-                
+
                 <h2 class="addItem__title">Add items</h2>
 
                 <div class="addItem__cont">
@@ -86,16 +86,26 @@
                         <option value="accessories">Accessory</option>
                     </select>
 
-                    <label class="addItem__upload">
-                        <input type="file" name="image" placeholder="Upload photos" class="addItem__input"
-                            accept="image/png, image/jpg">
-                    </label>
+                    <div class="addItem__contTwo">
+                        <label class="addItem__upload">
+                            <input type="file" name="image" placeholder="Upload photos" class="addItem__input">
+                        </label>
+
+                        <label class="addItem__upload">
+                            <input type="file" name="image" placeholder="Upload photos" class="addItem__input">
+                        </label>
+
+                        <label class="addItem__upload">
+                            <input type="file" name="image" placeholder="Upload photos" class="addItem__input">
+                        </label>
+                    </div>
+
 
                 </div>
 
 
-                <button class="button">
-                    Sign up
+                <button class="addItem__button">
+                    Add Item
                 </button>
             </form>
 
@@ -192,7 +202,10 @@
 
     <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-firestore.js"></script>
-    <script src="./scripts/products.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-storage.js"></script>
+    <script src="./scripts/firebase.js"></script>
+    <script src="./scripts/additem.js"></script>
+    
 </body>
 
 </html>

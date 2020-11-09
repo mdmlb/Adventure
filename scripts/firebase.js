@@ -1,4 +1,4 @@
-var firebaseConfig = {
+const firebaseConfig = {
     apiKey: "AIzaSyAHmqT78LFZ0o_kPE0LfXlKaGHFpRrtpn0",
     authDomain: "adventure-ca0cd.firebaseapp.com",
     databaseURL: "https://adventure-ca0cd.firebaseio.com",

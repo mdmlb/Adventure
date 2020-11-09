@@ -934,6 +934,26 @@ input[type=button] {
   background-color: #ffd900;
 }
 
+.addItem__button {
+  width: 57vh;
+  height: 6vh;
+  font-size: 17px;
+  background-color: #F0B606;
+  font-family: "Montserrat";
+  border: 0;
+  -webkit-box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.5);
+}
+
+.addItem__button__t {
+  color: black;
+  text-decoration: none;
+}
+
+.addItem__button:hover {
+  background-color: #ffd900;
+}
+
 .bestSeller {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2192,7 +2212,15 @@ input[type=button] {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-top: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 10px;
+}
+
+.addItem__contTwo {
+  margin-left: 147px;
+  margin-top: 12px;
 }
 
 .addItem__label {
@@ -2270,7 +2298,7 @@ input[type=button] {
 }
 
 .profileAdmin__button {
-  width: 36vh;
+  width: 29vh;
   height: 6vh;
   font-size: 17px;
   background-color: #F0B606;
