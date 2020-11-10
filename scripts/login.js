@@ -1,4 +1,4 @@
-const login = document.querySelector('.login');
+const login = document.querySelector('.formLog');
 
 login.addEventListener('submit', function (event) {
   event.preventDefault();
@@ -9,14 +9,13 @@ login.addEventListener('submit', function (event) {
   firebase.auth().signInWithEmailAndPassword(email, password)
   .then(function () {
 
-    window.location.href = 'index.html';
-
+    window.location.href = '../profile.html';    
   })
   .catch(function(error) {
     // Handle Errors here.
     console.log(error)
 
-    login.querySelector('.form__error').classList.remove('hidden');
+    //login.querySelector('.form__error').classList.remove('hidden');
     // ...
   });
 });

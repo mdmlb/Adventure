@@ -934,6 +934,46 @@ input[type=button] {
   background-color: #ffd900;
 }
 
+.profileUser__start {
+  width: 57vh;
+  height: 6vh;
+  font-size: 17px;
+  background-color: #F0B606;
+  font-family: "Montserrat";
+  border: 0;
+  -webkit-box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.5);
+}
+
+.profileUser__start__t {
+  color: black;
+  text-decoration: none;
+}
+
+.profileUser__start:hover {
+  background-color: #ffd900;
+}
+
+.profileSingOut {
+  width: 57vh;
+  height: 6vh;
+  font-size: 17px;
+  background-color: #F0B606;
+  font-family: "Montserrat";
+  border: 0;
+  -webkit-box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.5);
+}
+
+.profileSingOut__t {
+  color: black;
+  text-decoration: none;
+}
+
+.profileSingOut:hover {
+  background-color: #ffd900;
+}
+
 .addItem__button {
   width: 57vh;
   height: 6vh;
@@ -951,6 +991,66 @@ input[type=button] {
 }
 
 .addItem__button:hover {
+  background-color: #ffd900;
+}
+
+.profileAdmin__ordersbtn {
+  width: 57vh;
+  height: 6vh;
+  font-size: 17px;
+  background-color: #F0B606;
+  font-family: "Montserrat";
+  border: 0;
+  -webkit-box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.5);
+}
+
+.profileAdmin__ordersbtn__t {
+  color: black;
+  text-decoration: none;
+}
+
+.profileAdmin__ordersbtn:hover {
+  background-color: #ffd900;
+}
+
+.profileAdmin__aibtn {
+  width: 57vh;
+  height: 6vh;
+  font-size: 17px;
+  background-color: #F0B606;
+  font-family: "Montserrat";
+  border: 0;
+  -webkit-box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.5);
+}
+
+.profileAdmin__aibtn__t {
+  color: black;
+  text-decoration: none;
+}
+
+.profileAdmin__aibtn:hover {
+  background-color: #ffd900;
+}
+
+.profileSingOut__admin {
+  width: 57vh;
+  height: 6vh;
+  font-size: 17px;
+  background-color: #F0B606;
+  font-family: "Montserrat";
+  border: 0;
+  -webkit-box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.5);
+}
+
+.profileSingOut__admin__t {
+  color: black;
+  text-decoration: none;
+}
+
+.profileSingOut__admin:hover {
   background-color: #ffd900;
 }
 
@@ -2540,5 +2640,9 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.hidden {
+  display: none;
 }
 /*# sourceMappingURL=main.css.map */

@@ -1,40 +1,48 @@
 const db = firebase.firestore();
 const usersRef = db.collection('users');
 
-const register = document.querySelector('.register');
+const register = document.querySelector('.formSign');
+const btn = document.querySelector('.button');
 
 register.addEventListener('submit', function (event) {
   event.preventDefault();
 
+  const name = register.name.value;
   const email = register.email.value;
   const password = register.password.value;
-  const firstname = register.firstname.value;
-  const lastname = register.lastname.value;
-  const phone = register.phone.value;
+  const confirmpassword = register.confirmpassword.value;
+  console.log(name)
 
-  firebase.auth().createUserWithEmailAndPassword(email, password)
-  .then(function (credentials) {
+  if(password == confirmpassword){
 
-    const uid = credentials.user.uid;
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+    .then(function (credentials) {
 
-    usersRef.doc(uid).set({
-      firstname: firstname,
-      lastname: lastname,
-      phone: phone,
-      email: email,
+      const uid = credentials.user.uid;
+
+      usersRef.doc(uid).set({
+        name: name,
+        email: email,
+      })
+      .then(function () {
+        window.location.href = '../profile.html';
+      });
+
     })
-    .then(function () {
-      window.location.href = 'index.html';
+    .catch(function(error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      console.log(error)
+      console.log(errorMessage)
+      console.log(errorCode)
+
+      //register.querySelector('.form__error').classList.remove('hidden');
+      // ...
     });
 
-  })
-  .catch(function(error) {
-    // Handle Errors here.
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    console.log(error)
-
-    register.querySelector('.form__error').classList.remove('hidden');
-    // ...
-  });
+  } else {
+    alert ("Passwords don't match");
+  }
+  
 });

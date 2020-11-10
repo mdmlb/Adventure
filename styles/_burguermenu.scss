@@ -46,5 +46,12 @@
             font-weight: bolder;
         }
     }
+
+    &__profile{
+        font-family: $font;
+        font-size: 15px;
+        color: $white;
+        text-align: center;
+    }
     
 }

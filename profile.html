@@ -14,7 +14,7 @@
         <nav class="universalHeader__nav">
 
             <!--Nav: Shop-->
-            <a href="./shop.html" class="universalHeader__shopLinksTwo">
+            <a href="#" class="universalHeader__shopLinksTwo">
                 <img class="universalHeader__shopTwo" src="./resources/shop.png" atl="Shop">
             </a>
 
@@ -33,7 +33,7 @@
 
             <section class="universalHeader__contTwo">
                 <!--Nav: Profile-->
-                <a href="./login.html" class="universalHeader__profileLink">
+                <a href="#" class="universalHeader__profileLink">
                     <img class="universalHeader__profile" src="./resources/profile.png" atl="Profile">
                 </a>
 
@@ -55,35 +55,28 @@
     <main class="profile">
 
         <!--User-->
-        <!--
-        <section class="profileUser">
+        <section class="profileUser hidden">
 
             <article class="profileUser__cont">
                 <h1 class="profileUser__title">Welcome back!</h1>
 
-                <h3 class="profileUser__name">Name</h3>
+                <h3 class="profileUser__name"></h3>
 
                 <div class="profileUser__btnCont">
-                    <a href="./shop.html" class="profileUser__btnT">
-                        <button class="profileUser__button">
-                            Start Shopping
-                        </button>
-                    </a>
+                    <button class="profileUser__start">
+                        Start Shopping
+                    </button>
 
-                    <a href="./shop.html" class="profileUser__btnT">
-                        <button class="profileUser__button">
-                            Sign off
-                        </button>
-                    </a>
-
+                    <button class="profileSingOut">
+                        Sign out
+                    </button>
                 </div>
             </article>
 
-        </section>   
-        -->
+        </section>
 
         <!--Admin-->
-        <section class="profileAdmin">
+        <section class="profileAdmin hidden">
 
             <article class="profileAdmin__cont">
                 <h1 class="profileAdmin__title">Welcome back boss!</h1>
@@ -92,24 +85,17 @@
                     the camera or accessories pages.</p>
 
                 <div class="profileAdmin__btnCont">
+                    <button class="profileAdmin__aibtn">
+                        Add item
+                    </button>
 
-                    <a href="./additems.html" class="profileAdmin__btnT">
-                        <button class="profileAdmin__button">
-                            Add item
-                        </button>
-                    </a>
+                    <button class="profileAdmin__ordersbtn">
+                        Orders
+                    </button>
 
-                    <a href="./orders.html" class="profileAdmin__btnT">
-                        <button class="profileAdmin__button">
-                            Orders
-                        </button>
-                    </a>
-
-                    <a href="./login.html" class="profileAdmin__btnT">
-                        <button class="profileAdmin__button">
-                            Sign off
-                        </button>
-                    </a>
+                    <button class="profileSingOut__admin">
+                        Sign out
+                    </button>
                 </div>
 
 
@@ -197,7 +183,7 @@
                 <a href="./cameras.html" class="burguermenu__sections">CAMERAS</a>
                 <a href="./accessories.html" class="burguermenu__sections">ACCESSORIES</a>
                 <a href="./about.html" class="burguermenu__sections">ABOUT US</a>
-                <a href="./profile.html" class="burguermenu__sections">PROFILE</a>
+                <a href="#" class="burguermenu__profile">PROFILE</a>
 
             </div>
 
@@ -208,7 +194,11 @@
 
     <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-firestore.js"></script>
-    <script src="./scripts/products.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-auth.js"></script>
+    <script src="./scripts/firebase.js"></script>
+    <script src="./scripts/auth.js"></script>
+    <script src="./scripts/profile.js"></script>
+
 </body>
 
 </html>
