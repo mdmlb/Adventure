@@ -28,30 +28,18 @@ firebase.auth().onAuthStateChanged(function(user) {
         userInfo = data;
         
         //ADMIN
-        if(data.name == "admin") {
-          //document.querySelector('.profileAdmin').classList.remove('hidden');
-          const showAdmin = document.querySelectorAll('.profileAdmin');
-          const hideUser = document.querySelectorAll('.profileUser');
+        if(data.admin) {
+          const showAdmin = document.querySelectorAll('.showAdmin');
+          const hideAdmin = document.querySelectorAll('.hideAdmin');
+          
           showAdmin.forEach(function (elem) {
               elem.classList.remove('hidden');
           })
-          hideUser.forEach(function (elem) {
-              elem.classList.add('hidden');
-          })
-          
-        }
 
-        // PROFILE USER
-        if(data.name != "admin") {
-          name.innerText = data.name;
-          const showUser = document.querySelectorAll('.profileUser');
-          const hideAdmin = document.querySelectorAll('.profileAdmin');
-          showUser.forEach(function (elem) {
-              elem.classList.remove('hidden');
-          })
           hideAdmin.forEach(function (elem) {
-              elem.classList.add('hidden');
-          })
+            elem.classList.add('hidden');
+        })
+         
         }
       }
     });
@@ -72,17 +60,22 @@ firebase.auth().onAuthStateChanged(function(user) {
 // Sign Out
 
 //USER
-authSignout.addEventListener('click', function(event) {
+if(authSignout){
+  authSignout.addEventListener('click', function(event) {
   event.preventDefault();
   firebase.auth().signOut();
   console.log("out");
   window.location.href = "../index.html";
-});
+  });
+}
+
 
 //ADMIN
-authSingoutAdmin.addEventListener('click', function(event) {
-  event.preventDefault();
-  firebase.auth().signOut();
-  console.log("out");
-  window.location.href = "../index.html";
-});
+if (authSingoutAdmin) {
+  authSingoutAdmin.addEventListener('click', function(event) {
+    event.preventDefault();
+    firebase.auth().signOut();
+    console.log("out");
+    window.location.href = "../index.html";
+  });
+}

@@ -864,6 +864,13 @@ input[type=button] {
   font-weight: bolder;
 }
 
+.burguermenu__profile {
+  font-family: "Montserrat";
+  font-size: 15px;
+  color: white;
+  text-align: center;
+}
+
 .input {
   border: none;
   height: 36px;
@@ -1760,13 +1767,26 @@ input[type=button] {
           justify-content: space-between;
 }
 
-.filter {
+.filterform {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.filterCont {
   border: none;
   height: 36px;
-  width: 248px;
   color: #4F4F4F;
   margin-left: 8vh;
+}
+
+.filterCont__radio {
   cursor: pointer;
+  margin-left: 6px;
 }
 
 .sort {
@@ -1823,6 +1843,21 @@ input[type=button] {
 
 .product__cont {
   display: none;
+}
+
+.product__a {
+  color: white;
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .product__img {
@@ -2437,7 +2472,7 @@ input[type=button] {
           transform: translate(0, 0);
   -webkit-transition: 0.3s ease-in;
   transition: 0.3s ease-in;
-  top: 109px;
+  top: -13px;
   left: 379PX;
 }
 

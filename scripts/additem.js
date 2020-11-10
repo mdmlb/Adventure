@@ -50,18 +50,22 @@ images.forEach(function (group, index) {
     var newImageRef = storageRef.child(`products/${Math.floor(Math.random() * 999999999)}.jpg`);
 
     var file = group.files[0]; // use the Blob or File API
+  
+    var reader = new FileReader();
+    reader.readAsDataURL(file); // convert to base64 string
+    reader.onload = function(e) {
+    //img.src = e.target.result;
+    }
 
     newImageRef.put(file).then(function (snapshot) {
       console.log(snapshot)
       console.log('Uploaded a blob or file!');
-      imagePaths[index] = snapshot.metadata.fullPath;
+      imagesPath[index] = snapshot.metadata.fullPath;
     });
   });
 });
 
-btnai.addEventListener("click", function () {
+
+btnai.addEventListener("click", function (){
   //window.location.href = "cameras.html";
 });
-
-
-
