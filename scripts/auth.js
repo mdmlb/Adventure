@@ -13,19 +13,31 @@ firebase.auth().onAuthStateChanged(function(user) {
 
   if(user) {
 
-    auth.addEventListener('click', function(event){
-      window.location.pathname.includes('/profile.html');
-      //window.location.href = '../profile.html';
-    });
+    if(auth){
+      auth.addEventListener('click', function(event){
+        //window.location.pathname.includes('/profile.html');
+        window.location.href = '../profile.html';
+      });
+    }
+    
+    if(authindex){
+      authindex.addEventListener('click', function(event){
+        //window.location.pathname.includes('/profile.html');
+        window.location.href = '../profile.html';
+      });
 
-    authindex.addEventListener('click', function(event){
-      window.location.pathname.includes('/profile.html');
-      //window.location.href = '../profile.html';
-    });
+      //TO BAG FROM INDEX
+      bagindex.addEventListener('click', function(event){
+        window.location.pathname.includes('/shop.html')
+      });
+    }
 
-    authBurger.addEventListener('click', function(event){
-      window.location.href = '../profile.html';
-    });
+    if(authBurger){
+      authBurger.addEventListener('click', function(event){
+        window.location.href = '../profile.html';
+      });
+    }
+    
 
     const db = firebase.firestore();
     const usersRef = db.collection('users');
@@ -53,27 +65,35 @@ firebase.auth().onAuthStateChanged(function(user) {
     });
 
   } else {
-    
-    //console.log("hola")
 
     if(auth){
+
+      //TO USER/PROFILE FROM ANYOTHER PART
       auth.addEventListener('click', function(event){
         window.location.href = '../login.html';
       });
 
-      authBurger.addEventListener('click', function(event){
-        window.location.href = '../login.html';
+      //TO BAG FROM ANYOTHER PART
+      bag.addEventListener('click', function(event){
+        window.location.href = '../shop.html';
       });
     }
 
+    authBurger.addEventListener('click', function(event){
+      window.location.href = '../login.html';
+    });
+
     if(authindex){
+
+      //TO USER//PROFILE FROM INDEX
       authindex.addEventListener('click', function(event){
         window.location.href = '../login.html';
         //window.location.pathname.includes('/login.html');
       });
 
+      //TO BAG FROM INDEX
       bagindex.addEventListener('click', function(event){
-        window.location.href = '../login.html';
+        window.location.href = '../shop.html';
       });
     }
 
