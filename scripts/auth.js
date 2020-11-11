@@ -22,7 +22,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     
     if(authindex){
       authindex.addEventListener('click', function(event){
-        //window.location.pathname.includes('/profile.html');
+        window.location.pathname.includes('/profile.html');
         window.location.href = '../profile.html';
       });
 
@@ -70,7 +70,8 @@ firebase.auth().onAuthStateChanged(function(user) {
 
       //TO USER/PROFILE FROM ANYOTHER PART
       auth.addEventListener('click', function(event){
-        window.location.href = '../login.html';
+        //window.location.href = '../login.html';
+        window.location.pathname.includes('/login.html');
       });
 
       //TO BAG FROM ANYOTHER PART
@@ -87,8 +88,8 @@ firebase.auth().onAuthStateChanged(function(user) {
 
       //TO USER//PROFILE FROM INDEX
       authindex.addEventListener('click', function(event){
-        window.location.href = '../login.html';
-        //window.location.pathname.includes('/login.html');
+        //window.location.href = '../login.html';
+        window.location.pathname.includes('/login.html');
       });
 
       //TO BAG FROM INDEX
