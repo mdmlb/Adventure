@@ -15,14 +15,14 @@ firebase.auth().onAuthStateChanged(function(user) {
 
     if(auth){
       auth.addEventListener('click', function(event){
-        //window.location.pathname.includes('/profile.html');
-        window.location.href = '../profile.html';
+        window.location.pathname.includes('/profile.html');
+        //window.location.href = '../profile.html';
       });
     }
     
     if(authindex){
       authindex.addEventListener('click', function(event){
-        window.location.pathname.includes('/profile.html');
+        //window.location.pathname.includes('/profile.html');
         window.location.href = '../profile.html';
       });
 
@@ -80,16 +80,19 @@ firebase.auth().onAuthStateChanged(function(user) {
       });
     }
 
-    authBurger.addEventListener('click', function(event){
-      window.location.href = '../login.html';
-    });
+    if(authBurger){
+      authBurger.addEventListener('click', function(event){
+        window.location.href = '../login.html';
+      });
+    }
+    
 
     if(authindex){
 
       //TO USER//PROFILE FROM INDEX
       authindex.addEventListener('click', function(event){
-        //window.location.href = '../login.html';
-        window.location.pathname.includes('/login.html');
+        window.location.href = '../login.html';
+        //window.location.pathname.includes('/login.html');
       });
 
       //TO BAG FROM INDEX
@@ -99,7 +102,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     }
 
         
-}
+  }
 });
 
 // Sign Out
