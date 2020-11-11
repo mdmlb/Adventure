@@ -1,5 +1,7 @@
 const auth = document.querySelector('.universalHeader__profileLink');
+const authindex = document.querySelector('.header__profileLink');
 const bag = document.querySelector('.universalHeader__shopLink');
+const bagindex = document.querySelector('.header__shopLinksTwo');
 const authSignout = document.querySelector('.profileSingOut');
 const authSingoutAdmin = document.querySelector('.profileSingOut__admin');
 const authBurger = document.querySelector('.burguermenu__profile');
@@ -12,7 +14,13 @@ firebase.auth().onAuthStateChanged(function(user) {
   if(user) {
 
     auth.addEventListener('click', function(event){
-      window.location.href = '../profile.html';
+      window.location.pathname.includes('/profile.html');
+      //window.location.href = '../profile.html';
+    });
+
+    authindex.addEventListener('click', function(event){
+      window.location.pathname.includes('/profile.html');
+      //window.location.href = '../profile.html';
     });
 
     authBurger.addEventListener('click', function(event){
@@ -46,14 +54,30 @@ firebase.auth().onAuthStateChanged(function(user) {
 
   } else {
     
-    console.log("hola")
-    auth.addEventListener('click', function(event){
-      window.location.href = '../login.html';
-    });
+    //console.log("hola")
 
-    authBurger.addEventListener('click', function(event){
-      window.location.href = '../login.html';
-    });
+    if(auth){
+      auth.addEventListener('click', function(event){
+        window.location.href = '../login.html';
+      });
+
+      authBurger.addEventListener('click', function(event){
+        window.location.href = '../login.html';
+      });
+    }
+
+    if(authindex){
+      authindex.addEventListener('click', function(event){
+        window.location.href = '../login.html';
+        //window.location.pathname.includes('/login.html');
+      });
+
+      bagindex.addEventListener('click', function(event){
+        window.location.href = '../login.html';
+      });
+    }
+
+        
 }
 });
 

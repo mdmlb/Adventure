@@ -139,19 +139,6 @@ let objectsList = [];
 
 //Data
 function getProducts(){
-  /*productsRef
-  .get()
-  .then((querySnapshot) => {
-    objectsList = [];
-    querySnapshot.forEach((doc) => {
-        const obj = doc.data();
-        obj.id = doc.id;
-        objectsList.push(obj);
-        console.log(`${doc.id} => ${doc.data()}`);
-    });
-    renderProducts(objectsList);
-  });*/
-
   //console.log(window.location.pathname)
 
   //PRODUCTS TO CAMERA
@@ -173,7 +160,7 @@ function getProducts(){
     .catch(function(error) {
         console.log("Error getting documents: ", error);
     });
-  }else if (window.location.pathname.includes('/accessories')) {
+  }else if (window.location.pathname.includes('/accessories.html')) {
 
     //PRODUCTS TO ACCESSORIES
     productsRef.where("option", "==", "accessories")
