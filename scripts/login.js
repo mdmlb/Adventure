@@ -9,7 +9,7 @@ login.addEventListener('submit', function (event) {
   firebase.auth().signInWithEmailAndPassword(email, password)
   .then(function () {
 
-    window.location.href = '../profile.html';    
+    window.location.pathname = '../profile.html';    
   })
   .catch(function(error) {
     // Handle Errors here.

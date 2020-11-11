@@ -212,7 +212,6 @@ filterForm.addEventListener('change', function(){
   //ORDER
   switch(order){
     case 'brand_asc':
-      console.log("hola");
       copy.sort(function(a, b){
         return a.brand - b.brand;
       });
