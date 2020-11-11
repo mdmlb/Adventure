@@ -15,26 +15,27 @@ firebase.auth().onAuthStateChanged(function(user) {
 
     if(auth){
       auth.addEventListener('click', function(event){
-        window.location.pathname.includes('/profile.html');
-        //window.location.href = '../profile.html';
+        auth.href = '../profile.html';
       });
     }
     
     if(authindex){
       authindex.addEventListener('click', function(event){
         //window.location.pathname.includes('/profile.html');
-        window.location.href = '../profile.html';
+        authindex.href = '../profile.html';
       });
 
       //TO BAG FROM INDEX
       bagindex.addEventListener('click', function(event){
-        window.location.pathname.includes('/shop.html')
+        bagindex.href = '../shop.html'
+        //window.location.pathname.includes('/shop.html')
       });
     }
 
     if(authBurger){
       authBurger.addEventListener('click', function(event){
-        window.location.href = '../profile.html';
+        authBurger.href = '../shop.html'
+        //window.location.href = '../profile.html';
       });
     }
     
@@ -66,23 +67,33 @@ firebase.auth().onAuthStateChanged(function(user) {
 
   } else {
 
+    //PERSON HAVEN'T LOGIN
+
+    
     if(auth){
 
+        
       //TO USER/PROFILE FROM ANYOTHER PART
       auth.addEventListener('click', function(event){
+        //IT WORKS
         //window.location.href = '../login.html';
-        window.location.pathname.includes('/login.html');
+
+        auth.href = '../login.html';
+        
+        //DOESN'T WORK
+        //window.location.pathname.includes('../login.html');
+        //window.location.pathname.includes('/login.html') = '../login.html';
       });
 
       //TO BAG FROM ANYOTHER PART
       bag.addEventListener('click', function(event){
-        window.location.href = '../shop.html';
+        bag.href = '../shop.html';
       });
     }
 
     if(authBurger){
       authBurger.addEventListener('click', function(event){
-        window.location.href = '../login.html';
+        authBurger.href = '../login.html';
       });
     }
     
@@ -91,13 +102,15 @@ firebase.auth().onAuthStateChanged(function(user) {
 
       //TO USER//PROFILE FROM INDEX
       authindex.addEventListener('click', function(event){
-        window.location.href = '../login.html';
+        authindex.href = '../login.html';
         //window.location.pathname.includes('/login.html');
+        //window.location.pathname.includes('/login.html');
+        
       });
 
       //TO BAG FROM INDEX
       bagindex.addEventListener('click', function(event){
-        window.location.href = '../shop.html';
+        bagindex.href = '../shop.html';
       });
     }
 
