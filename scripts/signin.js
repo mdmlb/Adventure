@@ -25,7 +25,7 @@ register.addEventListener('submit', function (event) {
         email: email,
       })
       .then(function () {
-        window.location.pathname = '../profile.html';
+        window.location.href = '../profile.html';
       });
 
     })

@@ -48,11 +48,11 @@ firebase.auth().onAuthStateChanged(function(user) {
     
     console.log("hola")
     auth.addEventListener('click', function(event){
-      window.location.pathname = '../login.html';
+      window.location.href = '../login.html';
     });
 
     authBurger.addEventListener('click', function(event){
-      window.location.pathname = '../login.html';
+      window.location.href = '../login.html';
     });
 }
 });
@@ -65,7 +65,7 @@ if(authSignout){
   event.preventDefault();
   firebase.auth().signOut();
   console.log("out");
-  window.location.pathname = "../index.html";
+  window.location.href = "../index.html";
   });
 }
 
@@ -76,6 +76,6 @@ if (authSingoutAdmin) {
     event.preventDefault();
     firebase.auth().signOut();
     console.log("out");
-    window.location.pathname = "../index.html";
+    window.location.href = "../index.html";
   });
 }
