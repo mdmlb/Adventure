@@ -155,7 +155,7 @@ function getProducts(){
   //console.log(window.location.pathname)
 
   //PRODUCTS TO CAMERA
-  if (window.location.pathname.includes('/Adventure') == "/cameras.html") {
+  if (window.location.pathname.includes('/cameras.html')) {
     productsRef.where("option", "==", "camera")
     .get()
     .then(function(querySnapshot) {
@@ -173,7 +173,7 @@ function getProducts(){
     .catch(function(error) {
         console.log("Error getting documents: ", error);
     });
-  }else if (window.location.pathname.includes('/accessories') == "/accessories.html") {
+  }else if (window.location.pathname.includes('/accessories')) {
 
     //PRODUCTS TO ACCESSORIES
     productsRef.where("option", "==", "accessories")
