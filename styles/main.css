@@ -1002,7 +1002,7 @@ input[type=button] {
 }
 
 .profileAdmin__ordersbtn {
-  width: 57vh;
+  width: 32vh;
   height: 6vh;
   font-size: 17px;
   background-color: #F0B606;
@@ -1022,7 +1022,7 @@ input[type=button] {
 }
 
 .profileAdmin__aibtn {
-  width: 57vh;
+  width: 32vh;
   height: 6vh;
   font-size: 17px;
   background-color: #F0B606;

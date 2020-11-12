@@ -7,7 +7,7 @@ btnStart.addEventListener("click", function () {
 });
 
 //ADMIN
-const additem = document.querySelector('.profileAdmin__aibtn');
+/*const additem = document.querySelector('.profileAdmin__aibtn');
 const orders = document.querySelector('.profileAdmin__ordersbtn');
 
 additem.addEventListener("click", function () {
@@ -16,4 +16,4 @@ additem.addEventListener("click", function () {
 
 orders.addEventListener("click", function () {
     window.location.href = '../orders.html';
-});
+});*/

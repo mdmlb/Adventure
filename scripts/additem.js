@@ -67,5 +67,5 @@ images.forEach(function (group, index) {
 
 
 btnai.addEventListener("click", function (){
-  //window.location.href = "cameras.html";
+  alert ("Product added");
 });
