@@ -9,58 +9,60 @@ name = document.querySelector('.profileUser__name');
 
 var userInfo;
 
-firebase.auth().onAuthStateChanged(function(user) {
+firebase.auth().onAuthStateChanged(function (user) {
 
-  if(user) {
+  if (user) {
 
-    if(auth){
-      auth.addEventListener('click', function(event){
-        auth.href = '../profile.html';
+    if (auth) {
+      auth.addEventListener('click', function (event) {
+        ////////////////////////////////////////////////////
+        auth.href = 'profile.html';
       });
     }
-    
-    if(authindex){
-      authindex.addEventListener('click', function(event){
-        //window.location.pathname.includes('/profile.html');
-        authindex.href = '../profile.html';
+
+    if (authindex) {
+      authindex.addEventListener('click', function (event) {
+        ////////////////////////////////////////////////////
+        authindex.href = 'profile.html';
       });
 
       //TO BAG FROM INDEX
-      bagindex.addEventListener('click', function(event){
-        bagindex.href = '../shop.html'
-        //window.location.pathname.includes('/shop.html')
+      bagindex.addEventListener('click', function (event) {
+        ////////////////////////////////////////////////////
+        bagindex.href = 'shop.html';
       });
     }
 
-    if(authBurger){
-      authBurger.addEventListener('click', function(event){
-        authBurger.href = '../shop.html'
-        //window.location.href = '../profile.html';
+    if (authBurger) {
+      authBurger.addEventListener('click', function (event) {
+        ////////////////////////////////////////////////////
+        authBurger.href = 'shop.html';
       });
     }
-    
+
 
     const db = firebase.firestore();
     const usersRef = db.collection('users');
 
     usersRef.doc(user.uid).get().then(function (doc) {
-      if(doc.exists) {
+      if (doc.exists) {
         const data = doc.data();
         userInfo = data;
-        
+        userInfo.uid = user.uid;
+
         //ADMIN
-        if(data.admin) {
+        if (data.admin) {
           const showAdmin = document.querySelectorAll('.showAdmin');
           const hideAdmin = document.querySelectorAll('.hideAdmin');
-          
+
           showAdmin.forEach(function (elem) {
-              elem.classList.remove('hidden');
+            elem.classList.remove('hidden');
           })
 
           hideAdmin.forEach(function (elem) {
             elem.classList.add('hidden');
-        })
-         
+          })
+
         }
       }
     });
@@ -69,74 +71,74 @@ firebase.auth().onAuthStateChanged(function(user) {
 
     //PERSON HAVEN'T LOGIN
 
-    
-    if(auth){
 
-        
+    if (auth) {
+
+
       //TO USER/PROFILE FROM ANYOTHER PART
-      auth.addEventListener('click', function(event){
-        //IT WORKS
-        //window.location.href = '../login.html';
-
-        auth.href = '../login.html';
-        
-        //DOESN'T WORK
-        //window.location.pathname.includes('../login.html');
-        //window.location.pathname.includes('/login.html') = '../login.html';
+      auth.addEventListener('click', function (event) {
+        ////////////////////////////////////////////////////
+        auth.href = 'login.html';
       });
 
       //TO BAG FROM ANYOTHER PART
-      bag.addEventListener('click', function(event){
-        bag.href = '../shop.html';
+      bag.addEventListener('click', function (event) {
+        ////////////////////////////////////////////////////
+        bag.href = 'shop.html';
       });
     }
 
-    if(authBurger){
-      authBurger.addEventListener('click', function(event){
-        authBurger.href = '../login.html';
+    if (authBurger) {
+      authBurger.addEventListener('click', function (event) {
+        ////////////////////////////////////////////////////
+        authBurger.href = 'login.html';
       });
     }
-    
 
-    if(authindex){
+
+    if (authindex) {
 
       //TO USER//PROFILE FROM INDEX
-      authindex.addEventListener('click', function(event){
-        authindex.href = '../login.html';
-        //window.location.pathname.includes('/login.html');
-        //window.location.pathname.includes('/login.html');
-        
+      authindex.addEventListener('click', function (event) {
+        ////////////////////////////////////////////////////
+        authindex.href = 'login.html';
+
       });
 
       //TO BAG FROM INDEX
-      bagindex.addEventListener('click', function(event){
-        bagindex.href = '../shop.html';
+      bagindex.addEventListener('click', function (event) {
+        ////////////////////////////////////////////////////
+        bagindex.href = 'shop.html';
       });
     }
 
-        
+
   }
 });
 
 // Sign Out
 
 //USER
-if(authSignout){
-  authSignout.addEventListener('click', function(event) {
-  event.preventDefault();
-  firebase.auth().signOut();
-  console.log("out");
-  window.location.href = "../index.html";
+if (authSignout) {
+  authSignout.addEventListener('click', function (event) {
+    event.preventDefault();
+    firebase.auth().signOut();
+    console.log("out");
+
+    ////////////////////////////////////////////////////
+    authSignout.href = "index.html";
   });
 }
 
 
 //ADMIN
 if (authSingoutAdmin) {
-  authSingoutAdmin.addEventListener('click', function(event) {
+  authSingoutAdmin.addEventListener('click', function (event) {
     event.preventDefault();
     firebase.auth().signOut();
     console.log("out");
-    window.location.href = "../index.html";
+
+    ////////////////////////////////////////////////////
+    authSingoutAdmin.href = "index.html";
   });
 }

@@ -7,7 +7,8 @@ const dark = document.querySelector('.dark');
 
 let selectedItem = null;
 
-//////////////
+
+let productsCart = [];
 const cartRef = db.collection('bag');
 
 // Print products
@@ -35,25 +36,42 @@ function renderProducts(list) {
 
     const addBtn = newProduct.querySelector('.button__userAdd');
 
-    addBtn.addEventListener('click', function () {
+    addBtn.addEventListener('click', function (event) {
+
+      //objectsList = [];
+      event.preventDefault();
 
       const shopCart = {
         title: elem.title,
         brand: elem.brand,
         type: elem.type,
         price: Number(elem.price),
-        storageImages: elem.storageImages[0],
+        storageImages: elem.storageImages[0]
+        //productsCart: []
       };
 
-      cartRef.add(shopCart).then(function(docRef){
-        console.log("document Written With ID: ", docRef.id);
-      })
-      .catch(function (error){
-        console.log("Document written with ID: ", error); 
-      })
+      productsCart.push(shopCart);
+
+      shopCart2 = {
+        products: productsCart
+      }
+      
+      /*productsCart = [
+        {title: elem.title},
+        {brand: elem.brand},
+        {type: elem.type,},
+        {price: Number(elem.price)},
+        {storageImages: elem.storageImages[0]}
+      ];*/
+
+      cartRef.doc(userInfo.uid).set(shopCart2)
+      .catch(function(error) {
+
+        // Handle Errors here.
+        console.log(error)
+      });
+
     });
-
-
 
 
     console.log(elem);
@@ -141,9 +159,8 @@ function renderProducts(list) {
     console.log(yes);
     //ACTION TO DELETE
     yes.addEventListener('click', function () {
-      console.log("dio click a yes")
+      console.log("yes");
 
-      /*
       productsRef // referencia de la colección
       .doc(elem.id) // referencia de un documento específico en esa colección
       .delete() // elimine el documento asociado a esa referencia
@@ -155,7 +172,7 @@ function renderProducts(list) {
       .catch(function(error) {
         // debería entrar si ocurre algún error
         console.error("Error removing document: ", error);
-      });*/
+      });
     });
 
 

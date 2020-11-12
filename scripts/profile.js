@@ -3,7 +3,9 @@ const name = document.querySelector('.profileUser__name');
 const btnStart = document.querySelector('.profileUser__start');
 
 btnStart.addEventListener("click", function () {
-    window.location.href = '../cameras.html';
+
+    ////////////////////////////////////////////////////
+    btnStart.href = 'cameras.html';
 });
 
 //ADMIN
