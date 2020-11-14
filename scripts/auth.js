@@ -40,17 +40,20 @@ firebase.auth().onAuthStateChanged(function (user) {
       });
     }
 
-
     const db = firebase.firestore();
     const usersRef = db.collection('users');
 
     usersRef.doc(user.uid).get().then(function (doc) {
       if (doc.exists) {
+        
         const data = doc.data();
         userInfo = data;
         userInfo.uid = user.uid;
 
-        //ADMIN
+        if(window.getBagProducts){
+          getBagProducts();
+        }
+
         if (data.admin) {
           const showAdmin = document.querySelectorAll('.showAdmin');
           const hideAdmin = document.querySelectorAll('.hideAdmin');

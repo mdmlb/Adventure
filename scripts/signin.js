@@ -13,38 +13,38 @@ register.addEventListener('submit', function (event) {
   const confirmpassword = register.confirmpassword.value;
   console.log(name)
 
-  if(password == confirmpassword){
+  if (password == confirmpassword) {
 
     firebase.auth().createUserWithEmailAndPassword(email, password)
-    .then(function (credentials) {
+      .then(function (credentials) {
 
-      const uid = credentials.user.uid;
+        const uid = credentials.user.uid;
 
-      usersRef.doc(uid).set({
-        name: name,
-        email: email,
+        usersRef.doc(uid).set({
+          name: name,
+          email: email,
+        })
+          .then(function () {
+
+            ////////////////////////////////////////////////////
+            window.location.href = 'profile.html';
+          });
+
       })
-      .then(function () {
+      .catch(function (error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log(error)
+        console.log(errorMessage)
+        console.log(errorCode)
 
-        ////////////////////////////////////////////////////
-        window.location.href = 'profile.html';
+        //register.querySelector('.form__error').classList.remove('hidden');
+        // ...
       });
 
-    })
-    .catch(function(error) {
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      console.log(error)
-      console.log(errorMessage)
-      console.log(errorCode)
-
-      //register.querySelector('.form__error').classList.remove('hidden');
-      // ...
-    });
-
   } else {
-    alert ("Passwords don't match");
+    alert("Passwords don't match");
   }
-  
+
 });

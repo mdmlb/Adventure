@@ -7,7 +7,6 @@ const dark = document.querySelector('.dark');
 
 let selectedItem = null;
 
-
 let productsCart = [];
 const cartRef = db.collection('bag');
 
@@ -34,46 +33,6 @@ function renderProducts(list) {
       <button class="button__userAdd">Add to cart</button>
     `;
 
-    const addBtn = newProduct.querySelector('.button__userAdd');
-
-    addBtn.addEventListener('click', function (event) {
-
-      //objectsList = [];
-      event.preventDefault();
-
-      const shopCart = {
-        title: elem.title,
-        brand: elem.brand,
-        type: elem.type,
-        price: Number(elem.price),
-        storageImages: elem.storageImages[0]
-        //productsCart: []
-      };
-
-      productsCart.push(shopCart);
-
-      shopCart2 = {
-        products: productsCart
-      }
-      
-      /*productsCart = [
-        {title: elem.title},
-        {brand: elem.brand},
-        {type: elem.type,},
-        {price: Number(elem.price)},
-        {storageImages: elem.storageImages[0]}
-      ];*/
-
-      cartRef.doc(userInfo.uid).set(shopCart2)
-      .catch(function(error) {
-
-        // Handle Errors here.
-        console.log(error)
-      });
-
-    });
-
-
     console.log(elem);
     if (elem.storageImages) {
       elem.storageImages.forEach(function (imageRef) {
@@ -87,6 +46,65 @@ function renderProducts(list) {
         });
       })
     }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    const addBtn = newProduct.querySelector('.button__userAdd');
+
+    function carList(productsListProducts) {
+
+      let productsCart = productsListProducts;
+
+      if (userInfo) {
+        const shopCart = {
+          title: elem.title,
+          brand: elem.brand,
+          type: elem.type,
+          price: Number(elem.price),
+          storageImages: elem.storageImages[0]
+        };
+
+        productsCart.push(shopCart);
+
+        shopCart2 = {
+          products: productsCart
+        }
+
+        cartRef
+          .doc(userInfo.uid)
+          .set(shopCart2)
+          .catch(function (error) {
+            console.log(error)
+          });
+      }
+
+    }
+
+
+    function getCart() {
+      cartRef
+        .doc(userInfo.uid)
+        .get()
+        .then((doc) => {
+          if (doc.exists) {
+            productsCart = doc.data().products;
+            shopCart2 = doc.data().products;
+            carList(productsCart);
+          }
+        }).catch(function (error) {
+          console.log("hola: ", error);
+        });
+    }
+
+    addBtn.addEventListener('click', function (event) {
+
+      event.preventDefault();
+
+      getCart();
+
+    });
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     // EDIT
     const editactive = newProduct.querySelector('.product__edit');
@@ -130,6 +148,7 @@ function renderProducts(list) {
       selectedItem = elem;
     });
 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     //DELETE  
     const deleteBtn = newProduct.querySelector('.product__delete');
@@ -162,21 +181,18 @@ function renderProducts(list) {
       console.log("yes");
 
       productsRef // referencia de la colección
-      .doc(elem.id) // referencia de un documento específico en esa colección
-      .delete() // elimine el documento asociado a esa referencia
-      .then(function() {
-        // debería entrar si todo sale bien
-        console.log("Document successfully deleted!");
-        getProducts(); // traiga los productos cuando estemos seguros de que ya eliminó el que le dijimos
-      })
-      .catch(function(error) {
-        // debería entrar si ocurre algún error
-        console.error("Error removing document: ", error);
-      });
+        .doc(elem.id) // referencia de un documento específico en esa colección
+        .delete() // elimine el documento asociado a esa referencia
+        .then(function () {
+          // debería entrar si todo sale bien
+          console.log("Document successfully deleted!");
+          getProducts(); // traiga los productos cuando estemos seguros de que ya eliminó el que le dijimos
+        })
+        .catch(function (error) {
+          // debería entrar si ocurre algún error
+          console.error("Error removing document: ", error);
+        });
     });
-
-
-
 
 
     console.log(userInfo);
@@ -240,6 +256,7 @@ function getProducts() {
 
 //the render is initialized
 getProducts();
+
 
 //filter and orders
 const filterForm = document.querySelector('.filterform');

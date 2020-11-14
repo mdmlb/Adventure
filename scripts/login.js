@@ -7,16 +7,16 @@ login.addEventListener('submit', function (event) {
   const password = login.password.value;
 
   firebase.auth().signInWithEmailAndPassword(email, password)
-  .then(function () {
+    .then(function () {
 
-    ////////////////////////////////////////////////////
-    window.location.pathname = 'profile.html';    
-  })
-  .catch(function(error) {
-    // Handle Errors here.
-    console.log(error)
+      ////////////////////////////////////////////////////
+      window.location.pathname = 'profile.html';
+    })
+    .catch(function (error) {
+      // Handle Errors here.
+      console.log(error)
 
-    //login.querySelector('.form__error').classList.remove('hidden');
-    // ...
-  });
+      //login.querySelector('.form__error').classList.remove('hidden');
+      // ...
+    });
 });

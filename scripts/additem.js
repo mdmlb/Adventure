@@ -12,7 +12,7 @@ const imagesPath = [];
 
 product.addEventListener('submit', function (event) {
   event.preventDefault();
- 
+
   const newProduct = {
     title: product.title.value,
     price: Number(product.price.value),
@@ -25,8 +25,8 @@ product.addEventListener('submit', function (event) {
   };
 
   db.collection("products").add(newProduct)
-  .then(function(docRef){
-    //console.log("Dcoument written with ID: ", docRef.id);
+    .then(function (docRef) {
+      //console.log("Dcoument written with ID: ", docRef.id);
       product.title.value = '';
       product.price.value = '';
       product.description.value = '';
@@ -34,10 +34,10 @@ product.addEventListener('submit', function (event) {
       product.type.value = '';
       product.option.value = '';
       //selectedItem = null;
-  })
-  .catch(function(error){
-    console.log("Error adding document: ", error);
-  });
+    })
+    .catch(function (error) {
+      console.log("Error adding document: ", error);
+    });
 
   //
 });
@@ -50,11 +50,11 @@ images.forEach(function (group, index) {
     var newImageRef = storageRef.child(`products/${Math.floor(Math.random() * 999999999)}.jpg`);
 
     var file = group.files[0]; // use the Blob or File API
-  
+
     var reader = new FileReader();
     reader.readAsDataURL(file); // convert to base64 string
-    reader.onload = function(e) {
-    //img.src = e.target.result;
+    reader.onload = function (e) {
+      //img.src = e.target.result;
     }
 
     newImageRef.put(file).then(function (snapshot) {
@@ -66,6 +66,6 @@ images.forEach(function (group, index) {
 });
 
 
-btnai.addEventListener("click", function (){
-  alert ("Product added");
+btnai.addEventListener("click", function () {
+  alert("Product added");
 });
