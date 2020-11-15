@@ -1,65 +1,3 @@
-//delete
-    const dark = document.querySelector('.dark');
-    const deleteactive = newProduct.querySelector('.products__delete');
-    const delet = document.querySelector('.delete');
-    const yes = document.querySelector('.deleteItem__yes');
-    const nodelete = document.querySelector('.deleteItem__no');
-
-    deleteactive.addEventListener('click', function () {
-      dark.classList.add("dark--active");
-        delet.classList.add("delete--show");
-        console.log("hola");
-
-      loader.classList.add('loader--show');
-      productsRef.doc(elem.id).delete().then(function () {
-        console.log("Document successfully deleted!");
-        getProducts();
-      })
-        .catch(function (error) {
-          console.error("Error removing document: ", error);
-        });
-    });
-
-    dark.addEventListener('click', function(){
-      if(dark.classList.contains("dark--active") && edit.classList.contains("delete--show")){ 
-        dark.classList.remove("dark--active"); 
-        delet.classList.remove("delete--show")
-      }
-      
-    });
-
-    nodelete.addEventListener('click', function(){
-      console.log("no");
-    });
-
-    //EDIT
-    const editactive = newProduct.querySelector('.product__edit');
-    const edit = document.querySelector('.edit');
-    const exit = document.querySelector('.editItem__exit');
-
-    editactive.addEventListener('click', function() {
-        dark.classList.add("dark--active");
-        edit.classList.add("edit--show");
-        console.log("hola");
-    });
-
-    dark.addEventListener('click', function(){
-      if(dark.classList.contains("dark--active") && edit.classList.contains("edit--show")){ 
-        dark.classList.remove("dark--active"); 
-        edit.classList.remove("edit--show")
-      }
-      
-    });
-
-    exit.addEventListener('click', function(){
-      if(dark.classList.contains("dark--active") && edit.classList.contains("edit--show")){ 
-        dark.classList.remove("dark--active"); 
-        edit.classList.remove("edit--show")
-      }
-      
-    });
-
-
 //ID DEL USUARIO EN EL CARRITO
 
 firebase.auth().onAuthStateChanged(function (user) {
@@ -68,7 +6,5 @@ firebase.auth().onAuthStateChanged(function (user) {
             // si el usuario existe quiere decir que inició sesión, se registró o ya tenía sesión iniciada
             const userId = user.uid;
             console.log("USUARIO"+userId);
-
-
         }
     });

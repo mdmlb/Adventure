@@ -39,14 +39,28 @@
             justify-content: center;  
         }
 
-          &__img {
-
+          &__img1 {
             &:hover {
               opacity: .7;
               cursor: pointer;
               border: 3px solid ;
             }
+          }
 
+          &__img2 {
+            &:hover {
+              opacity: .7;
+              cursor: pointer;
+              border: 3px solid ;
+            }
+          }
+
+          &__img3 {
+            &:hover {
+              opacity: .7;
+              cursor: pointer;
+              border: 3px solid ;
+            }
           }
     }
 }
