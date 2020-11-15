@@ -8,6 +8,8 @@ const dark = document.querySelector('.dark');
 let selectedItem = null;
 
 let productsCart = [];
+const imagesPath = [];
+
 const cartRef = db.collection('bag');
 
 // Print products
@@ -40,7 +42,7 @@ function renderProducts(list) {
           // Or inserted into an <img> element:
           var img = newProduct.querySelector('.product__img');
           img.src = url;
-          console.log(url);
+          //console.log(url);
         }).catch(function (error) {
           // Handle any errors
         });
@@ -48,12 +50,15 @@ function renderProducts(list) {
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //ADD TO CART
 
     const addBtn = newProduct.querySelector('.button__userAdd');
 
-    function carList(productsListProducts) {
+    function carList(pList) {
 
-      let productsCart = productsListProducts;
+      console.log(pList);
+
+      let productsCart = pList;
 
       if (userInfo) {
         const shopCart = {
@@ -74,7 +79,7 @@ function renderProducts(list) {
           .doc(userInfo.uid)
           .set(shopCart2)
           .catch(function (error) {
-            console.log(error)
+            console.log("hola: ", error)
           });
       }
 
@@ -111,11 +116,83 @@ function renderProducts(list) {
     const edit = document.querySelector('.edit');
     const exit = document.querySelector('.editItem__exit');
 
+    //ACTION TO EDIT
+    //const editBtn = newProduct.querySelector('.product__edit');
+    const editBtn = document.querySelector('.editItem');
+
+    const images = editBtn.querySelectorAll('.editItem__input');
+
+    images.forEach(function (group, index) {
+      group.addEventListener('change', function () {
+
+        var newImageRef = storageRef.child(`products/${Math.floor(Math.random() * 999999999)}.jpg`);
+
+        var file = group.files[0]; // use the Blob or File API
+
+        var reader = new FileReader();
+        reader.readAsDataURL(file); // convert to base64 string
+        reader.onload = function (e) {
+          //img.src = e.target.result;
+        }
+
+        newImageRef.put(file).then(function (snapshot) {
+          console.log(snapshot)
+          console.log('Uploaded a blob or file!');
+          imagesPath[index] = snapshot.metadata.fullPath;
+        });
+      });
+    });
+
     //TO SHOW THE MODAL
     editactive.addEventListener('click', function () {
       dark.classList.add("dark--active");
       edit.classList.add("edit--show");
       console.log("hola");
+
+      editBtn.title.value = elem.title;
+      editBtn.price.value = elem.price;
+      editBtn.description.value = elem.description;
+      editBtn.brand.value = elem.brand;
+      editBtn.type.value = elem.type;
+      //editBtn.storageImages.value = elem.storageImages;
+      selectedItem = elem;
+
+      editBtn.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const newProduct = {
+          title: editBtn.title.value,
+          price: Number(editBtn.price.value),
+          description: editBtn.description.value,
+          brand: editBtn.brand.value,
+          type: editBtn.type.value,
+          option: editBtn.option.value,
+          storageImages: imagesPath,
+        };
+
+        function handleThen(docRef) {
+          getProducts();
+          editBtn.title.value = '';
+          editBtn.price.value = '';
+          editBtn.description.value = '';
+          editBtn.brand.value = '';
+          editBtn.type.value = '';
+          selectedItem = null;
+        }
+
+        function handleCatch(error) {
+          console.error("Error adding document: ", error);
+        }
+
+        productsRef
+          .doc(selectedItem.id)
+          .set(newProduct)
+          .then(handleThen)
+          .catch(handleCatch);
+
+      });
+
+
     });
 
 
@@ -135,67 +212,56 @@ function renderProducts(list) {
 
     });
 
-    //ACTION TO EDIT
-    //const editBtn = newProduct.querySelector('.product__edit');
-    const editBtn = document.querySelector('.editItem');
 
-    editBtn.addEventListener('click', function () {
-      editBtn.title.value = elem.title;
-      editBtn.price.value = elem.price;
-      editBtn.description.value = elem.description;
-      editBtn.brand.value = elem.brand;
-      editBtn.type.value = elem.type;
-      selectedItem = elem;
-    });
+
+
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     //DELETE  
     const deleteBtn = newProduct.querySelector('.product__delete');
-    const delet = document.querySelector('.delete');
+    /*const delet = document.querySelector('.delete');
     const yes = document.querySelector('.deleteItem__yes');
     const nodelete = document.querySelector('.deleteItem__no');
-
-    deleteBtn.addEventListener('click', function () {
-      dark.classList.add("dark--active");
-      delet.classList.add("delete--show");
-      console.log("hola");
-    });
+    
+        deleteBtn.addEventListener('click', function () {
+          dark.classList.add("dark--active");
+          delet.classList.add("delete--show");
+          //console.log("hola");
+        });
 
     dark.addEventListener('click', function () {
       if (dark.classList.contains("dark--active") && delet.classList.contains("delete--show")) {
-        console.log("dio click")
+        //console.log("dio click")
         dark.classList.remove("dark--active");
         delet.classList.remove("delete--show")
       }
     });
 
-    console.log(nodelete);
+    //console.log(nodelete);
     nodelete.addEventListener('click', function () {
+      dark.classList.remove("dark--active");
+      delet.classList.remove("delete--show")
       //console.log("no");
-    });
+    });*/
 
-    console.log(yes);
     //ACTION TO DELETE
-    yes.addEventListener('click', function () {
-      console.log("yes");
+    deleteBtn.addEventListener('click', function () {
+      if (userInfo.admin) {
+        productsRef
+          .doc(elem.id)
+          .delete()
+          .then(function () {
+            console.log("Document successfully deleted!");
+            getProducts();
+          })
+          .catch(function (error) {
+            console.error("Error removing document: ", error);
+          });
+      }
 
-      productsRef // referencia de la colección
-        .doc(elem.id) // referencia de un documento específico en esa colección
-        .delete() // elimine el documento asociado a esa referencia
-        .then(function () {
-          // debería entrar si todo sale bien
-          console.log("Document successfully deleted!");
-          getProducts(); // traiga los productos cuando estemos seguros de que ya eliminó el que le dijimos
-        })
-        .catch(function (error) {
-          // debería entrar si ocurre algún error
-          console.error("Error removing document: ", error);
-        });
     });
 
-
-    console.log(userInfo);
     if (userInfo && userInfo.admin) {
       deleteBtn.classList.remove('hidden');
       editactive.classList.remove('hidden');
@@ -219,7 +285,7 @@ function getProducts() {
         objectsList = [];
         querySnapshot.forEach(function (doc) {
           // doc.data() is never undefined for query doc snapshots
-          console.log(doc.id, " => ", doc.data());
+          //console.log(doc.id, " => ", doc.data());
           const obj = doc.data();
           obj.id = doc.id;
           objectsList.push(obj);
@@ -239,7 +305,7 @@ function getProducts() {
         objectsList = [];
         querySnapshot.forEach(function (doc) {
           // doc.data() is never undefined for query doc snapshots
-          console.log(doc.id, " => ", doc.data());
+          //console.log(doc.id, " => ", doc.data());
           const obj = doc.data();
           obj.id = doc.id;
           objectsList.push(obj);

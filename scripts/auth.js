@@ -54,6 +54,10 @@ firebase.auth().onAuthStateChanged(function (user) {
           getBagProducts();
         }
 
+        if(window.getBagProducts){
+          getBagProducts();
+        }
+
         if (data.admin) {
           const showAdmin = document.querySelectorAll('.showAdmin');
           const hideAdmin = document.querySelectorAll('.hideAdmin');
@@ -124,11 +128,11 @@ firebase.auth().onAuthStateChanged(function (user) {
 //USER
 if (authSignout) {
   authSignout.addEventListener('click', function (event) {
-    event.preventDefault();
     firebase.auth().signOut();
     console.log("out");
 
     ////////////////////////////////////////////////////
+    //window.location.href = 'index.html';
     authSignout.href = "index.html";
   });
 }

@@ -235,14 +235,24 @@
                     <option value="camera">Camera</option>
                 </select>
 
-                <label class="editItem__upload">
-                    <input type="file" name="image" placeholder="Upload photos" class="editItem__input"
-                        accept="image/png, image/jpg">
-                </label>
+                <div class="editItem__contTwo">
+                    <label class="editItem__upload">
+                        <input type="file" name="image" placeholder="Upload photos" class="editItem__input">
+                    </label>
+
+                    <label class="editItem__upload">
+                        <input type="file" name="image" placeholder="Upload photos" class="editItem__input">
+                    </label>
+
+                    <label class="editItem__upload">
+                        <input type="file" name="image" placeholder="Upload photos" class="editItem__input">
+                    </label>
+                </div>
 
             </div>
 
             <p class="editItem__p">If you upload more photos, the previous ones will be deleted.</p>
+            <p class="editItem__p">Remember to fill in all the parameters</p>
 
             <button class="button">
                 Edit
@@ -252,7 +262,7 @@
 
     </section>
 
-    <!-- Delete item -->
+    <!-- Delete item 
     <section class="delete">
 
         <div class="deleteItem">
@@ -276,7 +286,7 @@
         </div>
 
     </section>
-
+-->
 
     <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-firestore.js"></script>
