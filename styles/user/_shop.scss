@@ -1,5 +1,5 @@
 .shop{
-    height: 72vh;
+    height: 100%;
     width: 100%;
 }
 
@@ -30,4 +30,256 @@
         color: blue;
         text-decoration: underline;
     }
+}
+
+
+.emptySignup{
+    height: 72vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+
+    &__title{
+        width: 553px;
+        font-size: 61px;
+        font-weight: 600;
+        color: $grey;
+    }
+
+    &__p{
+        margin-top: 45px;
+        color: $grey;
+        //background-color: yellowgreen;
+        width: 553px;
+    }
+
+    &__a{
+        color: blue;
+        text-decoration: underline;
+    }
+}
+
+.addCart{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 65px;
+}
+
+.contProducts{
+    width: 184vh;
+    display: flex;
+    flex-direction: column;
+
+
+    //TITLES
+    &__items{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    &__h{
+        color: $grey;
+        font-weight: 700;
+    }
+
+    &__line{
+        height: 3px;
+    }
+
+    //PRODUCTS
+    &__container2{
+        margin-top: 12px;
+    }
+
+    &__item{
+        height: 90px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    &__image{
+        width: 85px;
+    }
+
+    &__info{
+        display: flex;
+        flex-direction: column;
+        color: $grey2;
+    }
+
+    &__name{
+        font-weight: 600;
+        color: $grey;
+    }
+
+
+    &__info2{
+        color: $grey;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 206px;
+        justify-content: space-between;
+    }
+
+    &__brand{
+        font-weight: 400;
+    }
+
+    &__type{
+        font-weight: 400;
+    }
+
+    &__remove{
+        font-weight: 600;
+        text-decoration: underline;
+
+        &:hover{
+            cursor: pointer;
+            color: $yellow;
+        }
+    }
+
+    &__price{
+        font-weight: 600;
+    }
+    
+}
+
+.item1{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 206px;
+    justify-content: space-between;
+}
+
+.contTwo{
+    width: 505px;
+    background-color: $white;
+    color: $grey;
+    height: 182px;
+    box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.50);
+
+    &__cont{
+        margin: 0px 37px;
+        display: flex;
+        flex-direction: column;
+        height: 170px;
+        justify-content: space-around;
+    }
+
+    &__pay{
+        height: 5vh;
+        font-size: 17px;
+        background-color: $yellow;
+        font-family: $font;
+        border: 0;
+        box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
+    
+        &__t{
+            color: black;
+            text-decoration: none;
+        }
+    }
+}
+
+.contTotal{
+    display: flex;
+    flex-direction: column;
+    height: 72px;
+    justify-content: space-around;
+
+    &__container{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__cShipping{
+        font-weight: 600;
+        color: $grey2;
+    }
+
+    &__cTotal{
+        font-weight: 600;
+    }
+}
+
+////////////////////////////////////////////////////////////
+//MODAL
+.pay{
+    transform: translate(-100%,0);
+    width: 84vh;
+    height: 74vh;
+    background-color: $grey;
+    display: flex;
+    transition: 0.3s ease-in-out;
+    position: fixed;
+    top: 109px;
+
+    &--show{
+        transform: translate(0,0);
+        transition: 0.3s ease-in;
+        top: -13px;
+        left: 379PX;
+    }
+
+    .payCart{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        width: 84vh;
+        height: 74vh;
+        padding: 10vh;
+        
+        &__title{
+            font-size: 35px;
+            font-weight: 500;
+        }
+        
+        &__cont{
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+        }
+        
+        &__label{
+            margin-bottom: 19px;
+        }
+    
+        &__option{
+            border: none;
+            height: 36px;
+            width: 378px;
+            color: #4F4F4F;
+        }
+        
+        &__upload{
+            margin: 23px 0px;
+        }
+        
+        &__p{
+            width: 377px;
+            font-size: 15px;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        &__exit{
+            position: fixed;
+            left: 39px;
+            top: 50px;
+            cursor: pointer;
+        }
+           
+    }
+    
 }

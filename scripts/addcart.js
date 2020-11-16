@@ -1,125 +1,157 @@
 const db = firebase.firestore();
-const bagRef = db.collection('bag');
-var storageRef = firebase.storage().ref();
+const cartRef = db.collection('bag');
+const storageRef = firebase.storage().ref();
 
-const productsBagList = document.querySelector('.purchases__container');
+const productscartList = document.querySelector('.contProducts__container2');
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//Chart
+//CART
 
-function renderBagProducts(list) {
-  productsBagList.innerHTML = '';
+function renderCartProducts(list) {
+  productscartList.innerHTML = '';
   list.forEach(function (elem, i) {
-    console.log(elem.nameProduct);
-    const newBagProduct = document.createElement('section');
-    newBagProduct.classList.add('purchases__item');
+    const newCarProduct = document.createElement('section');
+    newCarProduct.classList.add('contProducts__item');
 
-    newBagProduct.innerHTML = `
-            <div class="purchases__imageC">
-                <img src="" alt="" class="purchases__image">
-            </div>
-            <div class="purchases__info">
-                <p class="purchases__name">${elem.nameProduct}</p>
-                <p class="purchases__price"><strong>Price:</strong> $${elem.price}</p>
-                <p class="purchases__remove">Remove</p>
-            </div>
-            `;
+    newCarProduct.innerHTML = `
+      <div class="item1">
+           <div class="contProducts__imgContainer">
+              <img src="" alt="" class="contProducts__image">
+          </div>
+          <div class="contProducts__info">
+              <p class="contProducts__name">${elem.title}</p>
+              <p class="contProducts__brand">${elem.brand}</p>
+              <p class="contProducts__type">${elem.type}</p>
+          </div>
+      </div>
 
-    //Mostrar imagen
-    storageRef.child(elem.image).getDownloadURL().then(function (url) {
-      var img = newBagProduct.querySelector('img');
+      <div class="contProducts__info2">
+          <p class="contProducts__remove">DELETE</p>
+          <p class="contProducts__price">$${elem.price}</p>
+      </div>
+    `;
+
+    //IMAGE
+    storageRef.child(elem.storageImages).getDownloadURL().then(function (url) {
+      var img = newCarProduct.querySelector('img');
       img.src = url;
     }).catch(function (error) {
       // Handle any errors
     });
 
-    //Delete
-    /*
-    const deleteButton = newBagProduct.querySelector('.purchases__remove');
-    deleteButton.addEventListener('click', function () {
-      bagRef.doc(userInfo.uid).delete().then(function () {
-        console.log("Document successfully deleted!");
-        getBagProducts();
-      })
-        .catch(function (error) {
-          console.error("Error removing document: ", error);
+    //TOTAL
+    cartRef.doc(userInfo.uid).get().then((doc) => {
+      if (doc.exists) {
+        var val = doc.data().products.reduce(function (previousValue, currentValue) {
+          return {
+            price: previousValue.price + currentValue.price,
+          }
         });
-    });*/
 
-    productsBagList.appendChild(newBagProduct);
+        document.querySelector('.contTotal__cTotal').innerHTML = `${val.price}`;
+      }
+    });
+
+    //DELETE
+
+    productscartList.appendChild(newCarProduct);
   });
 }
 
-let bagList = [];
-function getBagProducts() {
-  bagRef.doc(userInfo.uid)
+let cartList = [];
+function getCartProducts() {
+  cartRef.doc(userInfo.uid)
     .get()
     .then((doc) => {
-      bagList = [];
+      cartList = [];
       if (doc.exists) {
         doc.data().products.forEach(function (item) {
-          bagList.push(item);
+          cartList.push(item);
         });
       }
 
-      renderBagProducts(bagList);
+      renderCartProducts(cartList);
+    });
+}
+
+function getTotalProducts() {
+  cartRef.doc(userInfo.uid)
+    .get()
+    .then((doc) => {
+      if (doc.exists) {
+        NumberBag.innerHTML = doc.data().products.length;
+      }
     });
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //CHECKOUT
 
-/*
-const checkRef = db.collection('orders');
+const orderRef = db.collection('orders');
 
-const formCheck = document.querySelector('.checkout__pay');
-const checkBtn = document.querySelector('.checkBtn');
+const btnPay = document.querySelector('.contTwo__pay');
+const pay = document.querySelector('.pay');
+const form = document.querySelector('.payCart');
+const dark = document.querySelector('.dark');
+const exit = document.querySelector('.payCart__exit');
 
-checkList = [];
-let arrayOrders;
-formCheck.addEventListener('submit', function(event){
+btnPay.addEventListener('click', function () {
+
+  dark.classList.add("dark--active");
+  pay.classList.add("pay--show");
+
+  form.addEventListener('submit', function (event) {
+    
     event.preventDefault();
-
+  
     const newOrder = {
-        cardType: formCheck.cardType.value,
-        cardNumber: Number(formCheck.number.value),
-        fullName: formCheck.fullName.value,
-        idNumber: formCheck.idNumber.value,
-        address: formCheck.address.value,
-      };
+      card: Number(form.card.value),
+      name: form.name.value,
+      address: form.address.value,
+    };
+  
+  
+    orderList2 = {
+      ordersInfo: newOrder,
+      orders: productsOrders,
+    }
+  
+    orderRef.add(orderList2).then().catch(function (error) {
+      console.error("Error adding document: ", error);
+    });
+  })
+
+});
+
+orderList = [];
+let productsOrders;
 
 
-      checkList2 = {
-        ordersInfo: newOrder,
-        orders: arrayOrders,
-      }
-
-      //arrayOrders.push();
-      checkRef.add(checkList2).then().catch(function (error) {
-        console.error("Error adding document: ", error);
-      });
-})
-
-function getBag() {
-    checkRef
-      .doc(userInfo.uid)
-      .get()
-      .then((doc) => {
-        if (doc.exists) {
-          checkList = doc.data().orders;
-        }
-      }).catch(function (error) {
-        console.log("hola: ", error);
-      });
+dark.addEventListener('click', function () {
+  if (dark.classList.contains("dark--active") && pay.classList.contains("pay--show")) {
+    dark.classList.remove("dark--active");
+    pay.classList.remove("pay--show")
   }
 
-function getOrder(){
-    bagRef.doc(userInfo.uid).get().then((doc) => {
-        if(doc.exists){
-            doc.data().products.forEach (function (item) {
-                arrayOrders=doc.data();//console.log(doc.data().products);
-            });
-        }
+});
+
+exit.addEventListener('click', function () {
+  if (dark.classList.contains("dark--active") && pay.classList.contains("pay--show")) {
+    dark.classList.remove("dark--active");
+    pay.classList.remove("pay--show")
+  }
+
+});
+
+function getOrder() {
+  cartRef.doc(userInfo.uid).get().then((doc) => {
+    if (doc.exists) {
+      doc.data().products.forEach(function (item) {
+        productsOrders = doc.data();
       });
+    }
+  }).catch(function (error) {
+    console.log("hola: ", error);
+  });
 }
-*/
+

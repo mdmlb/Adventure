@@ -50,12 +50,16 @@ firebase.auth().onAuthStateChanged(function (user) {
         userInfo = data;
         userInfo.uid = user.uid;
 
-        if(window.getBagProducts){
-          getBagProducts();
+        if(window.getCartProducts){
+          getCartProducts();
         }
 
-        if(window.getBagProducts){
-          getBagProducts();
+        if(window.getCart){
+          getCart();
+        }
+
+        if(window.getOrder){
+          getOrder();
         }
 
         if (data.admin) {

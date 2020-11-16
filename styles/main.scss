@@ -7,6 +7,7 @@ $yellowTwo : #ffd900;
 $black: #080808;
 $white: white;
 $grey:  #161616;
+$grey2 : #828282;
 
 //fonts
 $headerfont: "Poppins";
@@ -46,6 +47,7 @@ $buttomfont: $font;
 @import './admin/admin';
 @import './admin/edititem';
 @import './admin/deleteitem';
+@import './admin/orders';
 
 body{
     font-family: $font;

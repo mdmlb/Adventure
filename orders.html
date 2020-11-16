@@ -53,11 +53,62 @@
 
     <main class="orders">
 
-        <h1 class="orders__title">
-            Orders
-        </h1>
+        <article class="userOrders">
 
-        <article class="orders__cont">
+            <h1 class="userOrders__title">Orders</h1>
+
+            <!-- Orders -->
+            <section class="ordersUser">
+
+                <article class="contOrder">
+
+                    <div class="productsOrdersInfo">
+
+                        <div class="productsOrdersInfo__cont">
+                            <h3 class="productsOrdersInfo__id">N. 1</h3>
+                            <h3 class="productsOrdersInfo__name">User name</h3>
+                            <h3 class="productsOrdersInfo__email">Email</h3>
+                            <h3 class="productsOrdersInfo__address">Address</h3>
+                            <h3 class="productsOrdersInfo__total">TOTAL: $3.449.000</h3>
+                        </div>
+
+                    </div>
+
+                    <div class="contProductsOrdes">
+                        <div class="contProductsOrdes__container">
+                            <div class="contProductsOrdes__items">
+                                <h2 class="contProductsOrdes__h">PRODUCTS</h2>
+                                <h2 class="contProductsOrdes__h">PRICE</h2>
+                            </div>
+
+                            <img src="./resources/line.png" alt="" class="contProductsOrdes__line">
+                        </div>
+
+                        <div class="contProductsOrdes__container2">
+                            <section class="contProductsOrdes__item">
+
+                                <div class="item1">
+                                    <div class="contProductsOrdes__imgContainer">
+                                        <img src="./resources/product.jpg" alt="" class="contProductsOrdes__image">
+                                    </div>
+                                    <div class="contProductsOrdes__info">
+                                        <p class="contProductsOrdes__name">Nikon FM10</p>
+                                        <p class="contProductsOrdes__brand">Nikon</p>
+                                        <p class="contProductsOrdes__type">Reflex</p>
+                                    </div>
+                                </div>
+
+                                <div class="contProductsOrdes__info2">
+                                    <p class="contProductsOrdes__price">$3.449.000</p>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+
+
+
+                </article>
+            </section>
 
         </article>
 
@@ -150,8 +201,6 @@
     <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-auth.js"></script>
     <script src="./scripts/firebase.js"></script>
-    <script src="./scripts/auth.js"></script>
-    <script src="./scripts/products.js"></script>
 </body>
 
 </html>

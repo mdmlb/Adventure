@@ -91,9 +91,13 @@ function renderProducts(list) {
         .doc(userInfo.uid)
         .get()
         .then((doc) => {
-          if (doc.exists) {
+          if (doc.exists && doc.data().products != undefined) {
             productsCart = doc.data().products;
             shopCart2 = doc.data().products;
+            carList(productsCart);
+          }else if(doc.exists && doc.data().products != undefined){
+            carList(productsCart);
+          }else if(!doc.exists){
             carList(productsCart);
           }
         }).catch(function (error) {

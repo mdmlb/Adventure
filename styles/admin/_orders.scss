@@ -1,0 +1,148 @@
+
+.userOrders{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 65px;
+
+    &__title{
+        font-size: 41px;
+        font-weight: 600;
+        width: 100%;
+        text-align: center;
+        color: black;
+        margin: 33px;
+    }
+}
+
+.ordersUser{
+    width: 184vh;
+    display: flex;
+    flex-direction: column;   
+    background-color: white;
+}
+
+.contOrder{
+    width: 184vh;
+    display: flex;
+    flex-direction: column;
+    margin: 37px 0px;
+}
+
+.productsOrdersInfo{
+    color: $grey;
+    width: 100%;
+    margin-left: 24px;
+    margin-bottom: 36px;
+
+    &__id{
+        font-size: 15px;
+        font-weight: 200;
+        color: $grey2;
+    }
+
+    &__name{    
+        font-size: 38px;
+        font-weight: 600;
+    }
+
+    &__email{
+        font-size: 16px;
+        font-weight: 300;
+        color: $grey2;
+    }
+
+    &__address{
+        font-size: 16px;
+        font-weight: 300;
+        color: $grey2;
+    }
+
+    &__total{
+        font-size: 16px;
+        font-weight: 600;
+    }
+}
+
+.contProductsOrdes{
+    width: 176vh;
+    display: flex;
+    flex-direction: column;
+    margin-left: 24px;
+
+    //TITLES
+    &__items{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    &__h{
+        color: $grey;
+        font-weight: 500;
+    }
+
+    &__line{
+        height: 3px;
+    }
+
+    //PRODUCTS
+    &__container2{
+        margin-top: 12px;
+    }
+
+    &__item{
+        height: 90px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    &__image{
+        width: 85px;
+    }
+
+    &__info{
+        display: flex;
+        flex-direction: column;
+        color: $grey;
+    }
+
+    &__name{
+        font-weight: 600;
+    }
+
+
+    &__info2{
+        color: $grey;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 206px;
+        justify-content: flex-end;;
+    }
+
+    &__brand{
+        font-weight: 200;
+        color: $grey2;
+    }
+
+    &__type{
+        font-weight: 200;
+        color: $grey2;
+    }
+
+    &__price{
+        font-weight: 600;
+    }
+    
+}
+
+.item1{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 206px;
+    justify-content: space-between;
+}

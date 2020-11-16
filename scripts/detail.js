@@ -57,10 +57,7 @@ window.addEventListener('load', function () {
 
     const addBtn = document.querySelector('.button__userAddDetail');
     addBtn.addEventListener('click', function () {
-
-      //console.log("holi");
       getCart();
-
     });
 
     function carList(pList) {

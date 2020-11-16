@@ -57,74 +57,85 @@
         <article class="shoppingCart">
 
             <!-- Empty Without signin//login-->
-            <section class="empty">
+            <section class="empty hidden">
                 <h1 class="empty__title">YOU HAVEN'T ENTER TO START SHOPPING CART.</h1>
                 <p class="empty__p">Click <a href="./login.html" class="empty__a">here</a> to login or <br> or <a
-                    href="./signin.html" class="empty__a">here</a> to sign in.</p>
+                        href="./signin.html" class="empty__a">here</a> to sign in.</p>
             </section>
 
             <!-- Empty With sign up -->
-            <section class="emptySignup hide show">
+            <section class="emptySignup hidden">
                 <h1 class="emptySignup__title">YOUR SHOPPING CART IS NOW EMPTY.</h1>
-                <p class="emptySignup__p">Click <a href="./cameras.html" class="emptySignup__a">here</a> to look up our cameras <br> or <a
-                    href="./accessories.html" class="emptySignup__a">here</a> to look up for accessories.</p>
+                <p class="emptySignup__p">Click <a href="./cameras.html" class="emptySignup__a">here</a> to look up our
+                    cameras <br> or <a href="./accessories.html" class="emptySignup__a">here</a> to look up for
+                    accessories.</p>
             </section>
 
-            <!-- Product add to cart 
+            <!-- Product add to cart -->
             <section class="addCart">
 
                 <article class="contProducts">
 
                     <div class="contProducts__container">
-                        <table class="contProducts__items">
-                            <tr>
-                                <td class="contProducts__title">PRODUCTS</td>
-                                <td class="contProducts__info">QUANTITY</td>
-                                <td class="contProducts__info">TOTAL</td>
-                            </tr>
-                            <tr>
-                        </table>
+                        <div class="contProducts__items">
+                            <h2 class="contProducts__h">PRODUCTS</h2>
+                            <h2 class="contProducts__h">PRICE</h2>
+                        </div>
+
+                        <img src="./resources/line.png" alt="" class="contProducts__line">
                     </div>
 
+                    <div class="contProducts__container2">
+                        <!--
+                        <section class="contProducts__item">
+
+                            <div class="item1">
+                                <div class="contProducts__imgContainer">
+                                    <img src="./resources/product.jpg" alt="" class="contProducts__image">
+                                </div>
+                                <div class="contProducts__info">
+                                    <p class="contProducts__name">Nikon FM10</p>
+                                    <p class="contProducts__brand">Nikon</p>
+                                    <p class="contProducts__type">Reflex</p>
+                                </div>
+                            </div>
+
+                            <div class="contProducts__info2">
+                                <p class="contProducts__remove">DELETE</p>
+                                <p class="contProducts__price">$3.449.000</p>
+                            </div>
+                        </section>-->
+                    </div>
                 </article>
 
-                SECOND CONTAINER
+                <!--SECOND CONTAINER-->
                 <article class="contTwo">
 
                     <div class="contTwo__cont">
 
                         <div class="contTotal">
 
-                            FIRST LINE
                             <div class="contTotal__container">
-                                <h3 class="contTotal__containerLeft">Items without discounts</h3>
-                                <h3 class="contTotal__containerRight">$3.449.000</h3>
+                                <h3 class="contTotal__cShipping">Shipping</h3>
+                                <h3 class="contTotal__cShipping">Free</h3>
                             </div>
 
-                            SECOND LINE
-                            <div class="contTotal__container">
-                                <h3 class="contTotal__containerLeft">Subtotal</h3>
-                                <h3 class="contTotal__containerRight">$3.449.000</h3>
-                            </div>
 
-                            THIRD LINE
                             <div class="contTotal__container">
-                                <h3 class="contTotal__containerLeft">Shipping</h3>
-                                <h3 class="contTotal__containerRight">Free</h3>
-                            </div>
-
-                            FOURTH LINE
-                            <div class="contTotal__container">
-                                <h3 class="contTotal__containerLeft">TOTAL</h3>
-                                <h3 class="contTotal__containerRight">$3.449.000</h3>
+                                <h3 class="contTotal__cTotalTitle">TOTAL</h3>
+                                <h3 class="contTotal__cTotal">$3.449.000</h3>
                             </div>
                         </div>
+
+                        <button class="contTwo__pay">
+                            Pay
+                        </button>
                     </div>
 
 
                 </article>
             </section>
--->
+
         </article>
 
     </main>
@@ -212,12 +223,46 @@
         </section>
     </div>
 
+    <!-- pay -->
+    <section class="pay">
+
+        <form class="payCart">
+
+            <img class="payCart__exit" src="./resources/exit.png" alt="">
+
+            <h2 class="payCart__title">Pay</h2>
+
+            <div class="payCart__cont">
+
+                <label class="payCart__label">
+                    <input type="number" name="card" placeholder="Credit card number" class="input">
+                </label>
+
+                <label class="payCart__label">
+                    <input type="text" name="name" placeholder="Name" class="input">
+                </label>
+
+                <label class="payCart__label">
+                    <input type="text" name="address" placeholder="Address" class="input">
+                </label>
+
+            </div>
+
+            <button class="button">
+                Pay
+            </button>
+
+        </form>
+
+    </section>
+
     <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-storage.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-auth.js"></script>
     <script src="./scripts/firebase.js"></script>
     <script src="./scripts/auth.js"></script>
-    <script src="./scripts/products.js"></script>
+    <script src="./scripts/addcart.js"></script>
 </body>
 
 </html>
