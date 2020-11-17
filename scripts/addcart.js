@@ -119,6 +119,8 @@ btnPay.addEventListener('click', function () {
     orderRef.add(orderList2).then().catch(function (error) {
       console.error("Error adding document: ", error);
     });
+
+
   })
 
 });
@@ -154,3 +156,13 @@ function getOrder() {
   });
 }
 
+
+function deleteCart() {
+  cartRef.doc(userInfo.uid).delete().then(function () {
+    console.log("Document deleted")
+    window.location.href = 'shop.html';
+  }).catch(function (error) {
+    console.log(error);
+  })
+  
+}

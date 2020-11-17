@@ -63,6 +63,14 @@ firebase.auth().onAuthStateChanged(function (user) {
           getOrder();
         }
 
+        if(window.deleteCart){
+          const bntDeleteCart = document.querySelector('.payCart__button');
+          bntDeleteCart.addEventListener('click', function () {
+            deleteCart();
+            console.log(deleteCart());
+          });
+        }
+
         name.innerText = userInfo.name;
 
         const showShop = document.querySelectorAll('.showShop');

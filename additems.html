@@ -53,7 +53,14 @@
 
     <main class="add">
 
-        <section class="add__cont">
+        <!-- Add products not ADMIN-->
+        <section class="addItemNotAllow hideAdmin">
+            <h1 class="addItemNotAllow__title">YOU DON'T HAVE PERMISSION TO LOOK HERE.</h1>
+            <p class="addItemNotAllow__p">Click <a href="./login.html" class="addItemNotAllow__a">here</a> to login.</p>
+        </section>
+
+         <!-- Add products -->
+        <section class="add__cont hidden showAdmin">
 
             <form class="addItem">
 

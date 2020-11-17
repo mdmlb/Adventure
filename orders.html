@@ -55,10 +55,16 @@
 
         <article class="userOrders">
 
-            <h1 class="userOrders__title">Orders</h1>
+            <h1 class="userOrders__title hidden showAdmin">Orders</h1>
+
+            <!-- Order not ADMIN-->
+            <section class="orderNotAllow hideAdmin">
+                <h1 class="orderNotAllow__title">YOU DON'T HAVE PERMISSION TO LOOK HERE.</h1>
+                <p class="orderNotAllow__p">Click <a href="./login.html" class="orderNotAllow__a">here</a> to login.</p>
+            </section>
 
             <!-- Orders -->
-            <section class="ordersUser">
+            <section class="ordersUser hidden showAdmin">
 
                 <!--
                 <article class="contOrder">
