@@ -65,10 +65,19 @@ firebase.auth().onAuthStateChanged(function (user) {
 
         if(window.deleteCart){
           const bntDeleteCart = document.querySelector('.payCart__button');
+
+          const showpayCartyes = document.querySelectorAll('.showpayCartyes');
+
           bntDeleteCart.addEventListener('click', function () {
+
+            showpayCartyes.forEach(function (elem) {
+              elem.classList.remove('hidden');
+            })
+
             deleteCart();
-            console.log(deleteCart());
+            
           });
+          
         }
 
         name.innerText = userInfo.name;

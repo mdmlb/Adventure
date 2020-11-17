@@ -394,6 +394,7 @@ input[type=button] {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  position: fixed;
 }
 
 .universalHeader__link {
@@ -1942,6 +1943,20 @@ input[type=button] {
       flex-wrap: wrap;
 }
 
+.location {
+  display: none;
+  position: fixed;
+  width: 1.7%;
+  top: 15px;
+  right: 130px;
+}
+
+.location--show {
+  display: block;
+  -webkit-animation: 0s ease-in 5s forwards;
+          animation: 0s ease-in 5s forwards;
+}
+
 .product {
   background-color: white;
   -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -2069,6 +2084,10 @@ input[type=button] {
   width: 28px;
 }
 
+.product__noti {
+  display: none;
+}
+
 @media (max-width: 425px) {
   .container {
     height: 23vh;
@@ -2088,6 +2107,14 @@ input[type=button] {
   .sort {
     margin-top: 3vh;
     margin-right: 0vh;
+  }
+  .location--show {
+    display: none;
+  }
+  .product__noti {
+    font-weight: 800;
+    display: block;
+    color: #161616;
   }
 }
 
@@ -2854,6 +2881,97 @@ input[type=button] {
   font-weight: 600;
 }
 
+.modalorderdone {
+  -webkit-transform: translate(-100%, 0);
+          transform: translate(-100%, 0);
+  background-color: #161616;
+  width: 108vh;
+  height: 63vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  top: 0;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  position: fixed;
+}
+
+.modalorderdone--show {
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+  -webkit-transition: 0.3s ease-in;
+  transition: 0.3s ease-in;
+  top: 135px;
+  left: 315PX;
+}
+
+.modalorderdone .productbuy {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.modalorderdone .productbuy__title {
+  font-size: 35px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.modalorderdone .productbuy__p {
+  width: 377px;
+  font-size: 15px;
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.modalorderdone .productbuy__btnCont {
+  width: 625px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.modalorderdone .productbuy__ok {
+  width: 36vh;
+  height: 6vh;
+  font-size: 17px;
+  background-color: #F0B606;
+  font-family: "Montserrat";
+  border: 0;
+  -webkit-box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.5);
+  color: black;
+  text-decoration: none;
+}
+
+.modalorderdone .productbuy__ok:hover {
+  background-color: #ffd900;
+}
+
 .pay {
   -webkit-transform: translate(-100%, 0);
           transform: translate(-100%, 0);
@@ -2874,7 +2992,7 @@ input[type=button] {
           transform: translate(0, 0);
   -webkit-transition: 0.3s ease-in;
   transition: 0.3s ease-in;
-  top: -13px;
+  top: 66px;
   left: 379PX;
 }
 
@@ -3140,6 +3258,97 @@ input[type=button] {
   margin: 23px 0px;
 }
 
+.modalAdd {
+  -webkit-transform: translate(-100%, 0);
+          transform: translate(-100%, 0);
+  background-color: #161616;
+  width: 108vh;
+  height: 63vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  top: 0;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  position: fixed;
+}
+
+.modalAdd--show {
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+  -webkit-transition: 0.3s ease-in;
+  transition: 0.3s ease-in;
+  top: 135px;
+  left: 315PX;
+}
+
+.modalAdd .productAdded {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.modalAdd .productAdded__title {
+  font-size: 35px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.modalAdd .productAdded__p {
+  width: 377px;
+  font-size: 15px;
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.modalAdd .productAdded__btnCont {
+  width: 625px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.modalAdd .productAdded__ok {
+  width: 36vh;
+  height: 6vh;
+  font-size: 17px;
+  background-color: #F0B606;
+  font-family: "Montserrat";
+  border: 0;
+  -webkit-box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.5);
+  color: black;
+  text-decoration: none;
+}
+
+.modalAdd .productAdded__ok:hover {
+  background-color: #ffd900;
+}
+
 @media (max-width: 425px) {
   .add {
     height: 145vh;
@@ -3176,6 +3385,19 @@ input[type=button] {
   }
   .addItem__button {
     width: 100%;
+  }
+  .modalAdd {
+    width: 83%;
+  }
+  .modalAdd--show {
+    top: 135px;
+    left: 30px;
+  }
+  .modalAdd .productAdded {
+    width: 83%;
+  }
+  .modalAdd .productAdded__title {
+    font-size: 25px;
   }
 }
 

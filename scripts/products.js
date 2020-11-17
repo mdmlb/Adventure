@@ -31,7 +31,9 @@ function renderProducts(list) {
         <h1 class="product__title">${elem.title}</h1>        
         <p class="product__price">$${elem.price}</p>
       </a>
+      <p class="product__noti hidden showAddedProduct">Product added</p>
       <button class="button__userAdd">Add to cart</button>
+      
     `;
 
     console.log(elem);
@@ -49,6 +51,8 @@ function renderProducts(list) {
     //ADD TO CART
 
     const addBtn = newProduct.querySelector('.button__userAdd');
+    const noti = newProduct.querySelector('.product__noti');
+    const location = document.querySelector('.location');
 
     function carList(pList) {
 
@@ -107,6 +111,23 @@ function renderProducts(list) {
 
       getCart();
 
+      if (userInfo.uid) {
+        location.classList.add("location--show");
+
+        setTimeout(function () {
+          location.classList.remove("location--show");
+        }, 2500);
+      }
+
+      if(userInfo.uid){
+        noti.classList.remove("hidden");
+
+        setTimeout(function () {
+          noti.classList.add("hidden");
+        }, 2500);
+
+      }
+
     });
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -117,7 +138,6 @@ function renderProducts(list) {
     const exit = document.querySelector('.editItem__exit');
 
     //ACTION TO EDIT
-    //const editBtn = newProduct.querySelector('.product__edit');
     const editBtn = document.querySelector('.editItem');
 
     const images = editBtn.querySelectorAll('.editItem__input');
@@ -153,7 +173,6 @@ function renderProducts(list) {
       editBtn.description.value = elem.description;
       editBtn.brand.value = elem.brand;
       editBtn.type.value = elem.type;
-      //editBtn.storageImages.value = elem.storageImages;
       selectedItem = elem;
 
       editBtn.addEventListener('submit', function (event) {

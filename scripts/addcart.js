@@ -138,8 +138,7 @@ dark.addEventListener('click', function () {
 
 exit.addEventListener('click', function () {
   if (dark.classList.contains("dark--active") && pay.classList.contains("pay--show")) {
-    dark.classList.remove("dark--active");
-    pay.classList.remove("pay--show")
+    window.location.href = 'shop.html';
   }
 
 });
@@ -160,7 +159,6 @@ function getOrder() {
 function deleteCart() {
   cartRef.doc(userInfo.uid).delete().then(function () {
     console.log("Document deleted")
-    window.location.href = 'shop.html';
   }).catch(function (error) {
     console.log(error);
   })

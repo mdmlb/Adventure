@@ -65,7 +65,29 @@ images.forEach(function (group, index) {
   });
 });
 
+const modalAdd = document.querySelector('.modalAdd');
+const productAddedBtn = document.querySelector('.productAdded__ok');
+const ok = document.querySelector('.productAdded__ok');
 
 btnai.addEventListener("click", function () {
-  alert("Product added");
+
+  dark.classList.add("dark--active");
+  modalAdd.classList.add("modalAdd--show");
+
+});
+
+dark.addEventListener('click', function () {
+  if (dark.classList.contains("dark--active") && modalAdd.classList.contains("modalAdd--show")) {
+    //console.log("dio click")
+    dark.classList.remove("dark--active");
+    modalAdd.classList.remove("modalAdd--show")
+  }
+});
+
+//console.log(nodelete);
+ok.addEventListener('click', function () {
+  if (dark.classList.contains("dark--active") && modalAdd.classList.contains("modalAdd--show")) {
+    dark.classList.remove("dark--active");
+    modalAdd.classList.remove("modalAdd--show")
+  }
 });
