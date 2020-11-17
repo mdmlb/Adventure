@@ -10,7 +10,7 @@ login.addEventListener('submit', function (event) {
     .then(function () {
 
       ////////////////////////////////////////////////////
-      window.location.pathname = 'profile.html';
+      window.location.href = 'profile.html';
     })
     .catch(function (error) {
       // Handle Errors here.

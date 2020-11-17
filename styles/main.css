@@ -3038,7 +3038,7 @@ input[type=button] {
 }
 
 .ordersUser {
-  width: 184vh;
+  width: 90vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3046,11 +3046,10 @@ input[type=button] {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: white;
 }
 
 .contOrder {
-  width: 184vh;
+  width: 90vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3058,14 +3057,14 @@ input[type=button] {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: 37px 0px;
+  margin: 20px 0px;
+  background-color: white;
 }
 
 .productsOrdersInfo {
   color: #161616;
   width: 100%;
-  margin-left: 24px;
-  margin-bottom: 36px;
+  margin: 36px;
 }
 
 .productsOrdersInfo__id {

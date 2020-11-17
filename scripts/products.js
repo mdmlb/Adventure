@@ -39,12 +39,9 @@ function renderProducts(list) {
     if (elem.storageImages) {
       elem.storageImages.forEach(function (imageRef) {
         storageRef.child(elem.storageImages[0]).getDownloadURL().then(function (url) {
-          // Or inserted into an <img> element:
           var img = newProduct.querySelector('.product__img');
           img.src = url;
-          //console.log(url);
         }).catch(function (error) {
-          // Handle any errors
         });
       })
     }
@@ -95,9 +92,9 @@ function renderProducts(list) {
             productsCart = doc.data().products;
             shopCart2 = doc.data().products;
             carList(productsCart);
-          }else if(doc.exists && doc.data().products != undefined){
+          } else if (doc.exists && doc.data().products != undefined) {
             carList(productsCart);
-          }else if(!doc.exists){
+          } else if (!doc.exists) {
             carList(productsCart);
           }
         }).catch(function (error) {
@@ -131,12 +128,11 @@ function renderProducts(list) {
 
         var newImageRef = storageRef.child(`products/${Math.floor(Math.random() * 999999999)}.jpg`);
 
-        var file = group.files[0]; // use the Blob or File API
+        var file = group.files[0];
 
         var reader = new FileReader();
-        reader.readAsDataURL(file); // convert to base64 string
+        reader.readAsDataURL(file);
         reader.onload = function (e) {
-          //img.src = e.target.result;
         }
 
         newImageRef.put(file).then(function (snapshot) {
@@ -327,43 +323,45 @@ getProducts();
 
 //filter and orders
 const filterForm = document.querySelector('.filterform');
+if (filterForm) {
+  filterForm.addEventListener('change', function () {
 
-filterForm.addEventListener('change', function () {
+    let copy = objectsList.slice();
 
-  let copy = objectsList.slice();
+    const order = filterForm.sort.value;
 
-  const order = filterForm.sort.value;
+    //ORDER
+    switch (order) {
+      case 'brand_asc':
+        copy.sort(function (a, b) {
+          return a.brand - b.brand;
+        });
+        break;
+      case 'price_asc':
+        copy.sort(function (a, b) {
+          return b.price - a.price;
+        });
+        break;
+      case 'price_desc':
+        copy.sort(function (a, b) {
+          return a.price - b.price;
+        });
+        break;
+    }
 
-  //ORDER
-  switch (order) {
-    case 'brand_asc':
-      copy.sort(function (a, b) {
-        return a.brand - b.brand;
+    const nameFilter = filterForm.name.value;
+
+    //FILTER
+    if (nameFilter != '') {
+      copy = copy.filter(function (elem) {
+        if (elem.title.toLowerCase().includes(nameFilter)) {
+          return true;
+        }
+        return false;
       });
-      break;
-    case 'price_asc':
-      copy.sort(function (a, b) {
-        return a.price - b.price;
-      });
-      break;
-    case 'price_desc':
-      copy.sort(function (a, b) {
-        return b.price - a.price;
-      });
-      break;
-  }
+    }
+    renderProducts(copy);
+  });
 
-  const nameFilter = filterForm.name.value;
 
-  //FILTER
-  if (nameFilter != '') {
-    copy = copy.filter(function (elem) {
-      if (elem.title.toLowerCase().includes(nameFilter)) {
-        return true;
-      }
-      return false;
-    });
-  }
-  renderProducts(copy);
-});
-
+}

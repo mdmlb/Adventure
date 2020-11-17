@@ -17,24 +17,23 @@
 }
 
 .ordersUser{
-    width: 184vh;
+    width: 90vh;
     display: flex;
-    flex-direction: column;   
-    background-color: white;
+    flex-direction: column;
 }
 
 .contOrder{
-    width: 184vh;
+    width: 90vh;
     display: flex;
     flex-direction: column;
-    margin: 37px 0px;
+    margin: 20px 0px;
+    background-color: white;
 }
 
 .productsOrdersInfo{
     color: $grey;
     width: 100%;
-    margin-left: 24px;
-    margin-bottom: 36px;
+    margin: 36px;
 
     &__id{
         font-size: 15px;

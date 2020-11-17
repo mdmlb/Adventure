@@ -3,6 +3,7 @@ const cartRef = db.collection('bag');
 const storageRef = firebase.storage().ref();
 
 const productscartList = document.querySelector('.contProducts__container2');
+var totalVal;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //CART
@@ -36,19 +37,18 @@ function renderCartProducts(list) {
       var img = newCarProduct.querySelector('img');
       img.src = url;
     }).catch(function (error) {
-      // Handle any errors
     });
 
     //TOTAL
     cartRef.doc(userInfo.uid).get().then((doc) => {
       if (doc.exists) {
-        var val = doc.data().products.reduce(function (previousValue, currentValue) {
+        totalVal = doc.data().products.reduce(function (previousValue, currentValue) {
           return {
             price: previousValue.price + currentValue.price,
           }
         });
 
-        document.querySelector('.contTotal__cTotal').innerHTML = `${val.price}`;
+        document.querySelector('.contTotal__cTotal').innerHTML = `${totalVal.price}`;
       }
     });
 
@@ -101,21 +101,22 @@ btnPay.addEventListener('click', function () {
   pay.classList.add("pay--show");
 
   form.addEventListener('submit', function (event) {
-    
+
     event.preventDefault();
-  
+
     const newOrder = {
       card: Number(form.card.value),
       name: form.name.value,
       address: form.address.value,
+      total: totalVal.price
     };
-  
-  
+
+
     orderList2 = {
       ordersInfo: newOrder,
       orders: productsOrders,
     }
-  
+
     orderRef.add(orderList2).then().catch(function (error) {
       console.error("Error adding document: ", error);
     });
@@ -125,7 +126,6 @@ btnPay.addEventListener('click', function () {
 
 orderList = [];
 let productsOrders;
-
 
 dark.addEventListener('click', function () {
   if (dark.classList.contains("dark--active") && pay.classList.contains("pay--show")) {

@@ -45,26 +45,40 @@ firebase.auth().onAuthStateChanged(function (user) {
 
     usersRef.doc(user.uid).get().then(function (doc) {
       if (doc.exists) {
-        
+
         const data = doc.data();
         userInfo = data;
         userInfo.uid = user.uid;
 
-        if(window.getCartProducts){
+        if (window.getCartProducts) {
           getCartProducts();
         }
 
-        if(window.getCart){
+        if (window.getCart) {
           getCart();
         }
 
-        if(window.getOrder){
+        if (window.getOrder) {
           getOrder();
         }
+
+        name.innerText = userInfo.name;
+
+        const showShop = document.querySelectorAll('.showShop');
+        const hideShop = document.querySelectorAll('.hideShop');
+
+        showShop.forEach(function (elem) {
+          elem.classList.remove('hidden');
+        })
+
+        hideShop.forEach(function (elem) {
+          elem.classList.add('hidden');
+        })
 
         if (data.admin) {
           const showAdmin = document.querySelectorAll('.showAdmin');
           const hideAdmin = document.querySelectorAll('.hideAdmin');
+
 
           showAdmin.forEach(function (elem) {
             elem.classList.remove('hidden');
@@ -136,8 +150,8 @@ if (authSignout) {
     console.log("out");
 
     ////////////////////////////////////////////////////
-    //window.location.href = 'index.html';
-    authSignout.href = "index.html";
+    window.location.href = 'index.html';
+    //authSignout.href = "index.html";
   });
 }
 
