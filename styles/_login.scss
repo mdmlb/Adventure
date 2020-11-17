@@ -1,6 +1,5 @@
 .login{
     background-image: url('../resources/loginBackground.jpg');
-    //background-image: url('../resources/SpecsBackground.jpg');
     background-position: center;
     background-size: cover;
     height: 131vh;
@@ -44,4 +43,43 @@
         text-decoration-line: underline;
     }
    
+}
+
+@media (max-width: 425px){
+    .login{
+        height: 114vh;
+
+        &__cont{
+            width: 83%;
+            height: 78vh;
+        }
+    }
+
+    .formLog{
+        width: 100%;
+        padding: 4vh;
+
+        &__title{
+            font-size: 27px;
+            font-weight: 700;
+            text-align: center;
+            margin-top: 42px;
+        }
+
+        &__cont{
+            width: 100%;
+        }
+
+        .input{
+            width: 100%;
+        }
+
+        &__bottom{
+            font-size: 14px;
+            margin-bottom: 42px;
+        }
+    }
+}
+
+@media (max-width: 360px){
 }

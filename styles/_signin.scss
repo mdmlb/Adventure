@@ -45,3 +45,44 @@
     }
    
 }
+
+
+@media (max-width: 425px){
+    .signin{
+        height: 114vh;
+
+        &__cont{
+            width: 83%;
+            height: 102vh;
+        }
+    }
+
+    .formSign{
+        width: 100%;
+        padding: 4vh;
+        height: 102vh;
+
+        &__title{
+            font-size: 27px;
+            font-weight: 700;
+            text-align: center;
+            margin-top: 42px;
+        }
+
+        &__cont{
+            width: 100%;
+        }
+
+        .input{
+            width: 100%;
+        }
+
+        &__bottom{
+            font-size: 14px;
+            margin-bottom: 27px;
+        }
+    }
+}
+
+@media (max-width: 360px){
+}

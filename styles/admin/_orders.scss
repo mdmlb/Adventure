@@ -145,3 +145,18 @@
     width: 206px;
     justify-content: space-between;
 }
+
+@media (max-width: 425px){
+
+    .ordersUser{
+        width: 83%;
+    }
+
+    .contOrder{
+        width: 100%;
+    }
+    
+}
+
+@media (max-width: 360px){
+}

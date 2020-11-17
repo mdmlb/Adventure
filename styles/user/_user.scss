@@ -20,5 +20,37 @@
         margin-top: 60px;
         margin-bottom: 60px;
     }
-   
+}
+
+@media (max-width: 425px){
+    .profileUser{
+        width: 83%;
+
+        &__cont{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            align-items: center;
+        }
+
+        &__title{
+            font-size: 31px;
+        }
+    
+        &__name{
+            font-size: 45px;
+            color: #A6A5A5;
+            text-align: center;
+            margin-top: 60px;
+            margin-bottom: 60px;
+        }
+
+        &__btnCont{
+            width: 90%;
+        }
+    }
+}
+
+@media (max-width: 360px){
 }

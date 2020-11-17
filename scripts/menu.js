@@ -2,6 +2,7 @@
 //MENU
 const menuactive = document.querySelector('.menu');
 const menu = document.querySelector('.burguermenu');
+const dark = document.querySelector('.dark');
 
 menuactive.addEventListener('click', function () {
   dark.classList.add("dark--active");

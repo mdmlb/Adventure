@@ -3,7 +3,6 @@ const productsRef = db.collection('products');
 const storageRef = firebase.storage().ref();
 
 const productsList = document.querySelector('.productlist');
-const dark = document.querySelector('.dark');
 
 let selectedItem = null;
 
@@ -323,6 +322,7 @@ getProducts();
 
 //filter and orders
 const filterForm = document.querySelector('.filterform');
+
 if (filterForm) {
   filterForm.addEventListener('change', function () {
 
@@ -362,6 +362,5 @@ if (filterForm) {
     }
     renderProducts(copy);
   });
-
 
 }

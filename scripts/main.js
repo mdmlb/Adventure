@@ -70,7 +70,6 @@ carrouselSlider.addEventListener('input', function () {
 //SPECS
 const specs = document.querySelector('.specsBox');
 const modal = document.querySelector('.modal');
-const dark = document.querySelector('.dark');
 
 specs.addEventListener('click', function () {
     dark.classList.add("dark--active");

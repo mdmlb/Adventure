@@ -92,7 +92,6 @@ const orderRef = db.collection('orders');
 const btnPay = document.querySelector('.contTwo__pay');
 const pay = document.querySelector('.pay');
 const form = document.querySelector('.payCart');
-const dark = document.querySelector('.dark');
 const exit = document.querySelector('.payCart__exit');
 
 btnPay.addEventListener('click', function () {

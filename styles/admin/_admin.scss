@@ -54,3 +54,32 @@
     }
    
 }
+
+@media (max-width: 425px){
+    .profileAdmin{
+        width: 83%;
+        height: 94vh;
+
+        &__cont{
+            width: 100%;
+            height: 94vh;
+        }
+
+        &__title{
+            font-size: 30px;
+        }
+
+        &__p{
+            width: 59%;
+            font-size: 14px;
+        }
+
+        &__btnCont{
+            width: 83%;
+            flex-direction: column;
+        }
+    }
+}
+
+@media (max-width: 360px){
+}

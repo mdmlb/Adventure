@@ -68,3 +68,62 @@
     }
     
 }
+
+@media (max-width: 425px){
+    .edit{
+        width: 47vh;
+        height: 100vh;
+        
+        &--show{
+            top: 0px;
+            left: 30PX;
+        }
+
+        .editItem{
+            width: 47vh;
+            padding: 6vh;
+            height: 100vh;
+
+            &__exit{
+                left: 28px;
+                top: 22px;
+            }
+
+            &__cont{
+                width: 100%;
+            }
+
+            &__label{
+                width: 100%;
+            }
+
+            .input{
+                width: 100%;
+            }
+
+            &__contTwo{
+                margin-left: 0px;
+                width: 100%;
+                margin-top: 11px;
+            }
+
+            &__option{
+                width: 100%;
+            }
+
+            &__upload{
+                display: flex;
+                margin: 0px;
+            }
+
+            &__p{
+                width: 100%;
+                font-size: 11px;
+                margin-bottom: -9px;
+            }
+        }
+    }
+}
+
+@media (max-width: 360px){
+}

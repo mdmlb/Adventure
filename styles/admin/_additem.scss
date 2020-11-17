@@ -56,3 +56,52 @@
     }
    
 }
+
+@media (max-width: 425px){
+    .add{
+        height: 145vh;
+        
+        &__cont{
+            width: 83%;
+            height: 112vh;
+        }
+    }
+
+    .addItem{
+        width: 100%;
+        padding: 6vh;
+        height: 112vh;
+
+        &__cont{
+            width: 100%;
+        }
+
+        &__label{
+            width: 100%;
+        }
+
+        .input{
+            width: 100%;
+        }
+
+        &__option{
+            width: 100%;
+        }
+
+        &__contTwo{
+            margin-left: 0px;
+            width: 100%;
+        }
+
+        &__upload{
+            display: flex;
+        }
+
+        &__button{
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 360px){
+}

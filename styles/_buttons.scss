@@ -166,3 +166,41 @@
     }
 
 }
+
+
+@media (max-width: 425px){
+    .button__userAddDetail{
+        width: 83%;
+    }
+    
+    .profileUser__start{
+        width: 100%;
+    }
+
+    .profileSingOut{
+        width: 100%;
+        margin-top: 19px;
+    }
+    
+    .button{
+        width: 100%;
+    }
+
+    .profileAdmin__aibtn{
+        width: 100%;
+        height: 5vh;
+    }
+    .profileAdmin__ordersbtn{
+        width: 100%;
+        height: 5vh;
+        margin-top: 19px;
+    }
+    .profileSingOut__admin{
+        width: 100%;
+        height: 5vh;
+        margin-top: 19px;
+    }
+}
+
+@media (max-width: 360px){
+}

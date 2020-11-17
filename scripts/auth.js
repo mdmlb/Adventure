@@ -1,10 +1,9 @@
 const auth = document.querySelector('.universalHeader__profileLink');
 const authindex = document.querySelector('.header__profileLink');
-const bag = document.querySelector('.universalHeader__shopLink');
-const bagindex = document.querySelector('.header__shopLinksTwo');
 const authSignout = document.querySelector('.profileSingOut');
 const authSingoutAdmin = document.querySelector('.profileSingOut__admin');
-const authBurger = document.querySelector('.burguermenu__profile');
+const authBurgerProfile = document.querySelector('.burguermenu__profile');
+const authBurgerBag = document.querySelector('.burguermenu__bag');
 name = document.querySelector('.profileUser__name');
 
 var userInfo;
@@ -26,17 +25,19 @@ firebase.auth().onAuthStateChanged(function (user) {
         authindex.href = 'profile.html';
       });
 
-      //TO BAG FROM INDEX
-      bagindex.addEventListener('click', function (event) {
+    }
+
+    if (authBurgerProfile) {
+      authBurgerProfile.addEventListener('click', function (event) {
         ////////////////////////////////////////////////////
-        bagindex.href = 'shop.html';
+        authBurgerProfile.href = 'profile.html';
       });
     }
 
-    if (authBurger) {
-      authBurger.addEventListener('click', function (event) {
+    if (authBurgerBag) {
+      authBurgerBag.addEventListener('click', function (event) {
         ////////////////////////////////////////////////////
-        authBurger.href = 'shop.html';
+        authBurgerBag.href = 'shop.html';
       });
     }
 
@@ -98,28 +99,19 @@ firebase.auth().onAuthStateChanged(function (user) {
 
 
     if (auth) {
-
-
       //TO USER/PROFILE FROM ANYOTHER PART
       auth.addEventListener('click', function (event) {
         ////////////////////////////////////////////////////
         auth.href = 'login.html';
       });
-
-      //TO BAG FROM ANYOTHER PART
-      bag.addEventListener('click', function (event) {
-        ////////////////////////////////////////////////////
-        bag.href = 'shop.html';
-      });
     }
 
-    if (authBurger) {
-      authBurger.addEventListener('click', function (event) {
+    if (authBurgerProfile) {
+      authBurgerProfile.addEventListener('click', function (event) {
         ////////////////////////////////////////////////////
-        authBurger.href = 'login.html';
+        authBurgerProfile.href = 'login.html';
       });
     }
-
 
     if (authindex) {
 
@@ -129,13 +121,15 @@ firebase.auth().onAuthStateChanged(function (user) {
         authindex.href = 'login.html';
 
       });
+    }
 
-      //TO BAG FROM INDEX
-      bagindex.addEventListener('click', function (event) {
+    if (authBurgerBag) {
+      authBurgerBag.addEventListener('click', function (event) {
         ////////////////////////////////////////////////////
-        bagindex.href = 'shop.html';
+        authBurgerBag.href = 'shop.html';
       });
     }
+
 
 
   }
@@ -164,6 +158,6 @@ if (authSingoutAdmin) {
     console.log("out");
 
     ////////////////////////////////////////////////////
-    authSingoutAdmin.href = "index.html";
+    window.location.href = "index.html";
   });
 }

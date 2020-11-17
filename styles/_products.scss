@@ -6,17 +6,31 @@
 }
 
 .container{
-    height: 20vh;
+    height: 25vh;
     display: flex;
     flex-direction: row;
     align-items: flex-end;
     justify-content: space-between;
 }
 
+.containerAccessories{
+    height: 25vh;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+}
+
 .filterform{
     display: flex;
     width: 100%;
     justify-content: space-between;
+}
+
+.Accessories{
+    display: flex;
+    width: 100%;
+    justify-content: center;
 }
 
 //FILTER
@@ -30,7 +44,6 @@
        cursor: pointer; 
        margin-left: 6px;
     }
-    
 }
 
 //SORT
@@ -145,4 +158,25 @@
             }
         }
     }
+}
+
+@media (max-width: 425px){
+
+    .container{
+        height: 23vh;
+    }
+    .filterform{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .filterCont{
+        margin-left: 0vh;
+    }
+
+    .sort{
+        margin-top: 3vh;
+        margin-right: 0vh;
+    }
+
 }

@@ -1,17 +1,15 @@
-
-//Universal Header
 .about{
     height: 871px;
     width: 100%;
-    background-image: url("../resources/aboutbackground.jpg");
+    background-image: url("../resources/aboutusback.jpg");
     background-size: cover;
     background-position: center;
     
 }
 
 .description{
-    padding-top: 77px;
-    padding-left: 762px;
+    padding-top: 12vh;
+    padding-left: 116vh;
 
     &__cont{
         width: 428px;
@@ -44,4 +42,34 @@
         font-size: 17px;
     }
 }
-  
+
+@media (max-width: 425px){
+    .description{
+        padding-left: 3vh;
+    
+        &__cont {
+            width: 318px;
+            height: 318px;
+        }
+
+        &__logo{
+            width: 128px;
+            margin-bottom: 27px;
+        }
+
+        &__text{
+            width: 276px;
+        }
+
+        &__title{
+            text-align: left;
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 14px;
+        }
+
+        &__p{
+            font-size: 14px;
+        }
+    }
+}
