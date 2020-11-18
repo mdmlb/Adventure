@@ -48,11 +48,68 @@ function renderCartProducts(list) {
           }
         });
 
-        document.querySelector('.contTotal__cTotal').innerHTML = `${totalVal.price}`;
+        document.querySelector('.contTotal__cTotal').innerHTML = `$ ${totalVal.price}`;
       }
     });
 
     //DELETE
+    const removeBtn = newCarProduct.querySelector('.contProducts__remove');
+    
+    function carListDelete(pList) {
+
+      console.log(pList);
+
+      let productsCart = pList;
+
+      if (userInfo) {
+        const shopCart = {
+          title: elem.title,
+          brand: elem.brand,
+          type: elem.type,
+          price: Number(elem.price),
+          storageImages: elem.storageImages[0]
+        };
+
+        productsCart.splice(shopCart, 1);
+
+        shopCart2 = {
+          products: productsCart
+        }
+
+        cartRef
+          .doc(userInfo.uid)
+          .set(shopCart2)
+          .catch(function (error) {
+            console.log("hola: ", error)
+          });
+      }
+
+    }
+
+    function getCartdelete() {
+      cartRef
+        .doc(userInfo.uid)
+        .get()
+        .then((doc) => {
+          if (doc.exists && doc.data().products != undefined) {
+            productsCart = doc.data().products;
+            shopCart2 = doc.data().products;
+            carListDelete(productsCart);
+          } else if (doc.exists && doc.data().products != undefined) {
+            carListDelete(productsCart);
+          } else if (!doc.exists) {
+            carListDelete(productsCart);
+          }
+        }).catch(function (error) {
+          console.log("hola: ", error);
+        });
+    }
+
+    removeBtn.addEventListener('click', function (event) {
+
+      getCartdelete();
+
+    });
 
     productscartList.appendChild(newCarProduct);
   });
@@ -164,3 +221,4 @@ function deleteCart() {
   })
   
 }
+

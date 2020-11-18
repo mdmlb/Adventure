@@ -85,7 +85,6 @@ function renderProducts(list) {
 
     }
 
-
     function getCart() {
       cartRef
         .doc(userInfo.uid)
@@ -235,32 +234,6 @@ function renderProducts(list) {
 
     //DELETE  
     const deleteBtn = newProduct.querySelector('.product__delete');
-    /*const delet = document.querySelector('.delete');
-    const yes = document.querySelector('.deleteItem__yes');
-    const nodelete = document.querySelector('.deleteItem__no');
-    
-        deleteBtn.addEventListener('click', function () {
-          dark.classList.add("dark--active");
-          delet.classList.add("delete--show");
-          //console.log("hola");
-        });
-
-    dark.addEventListener('click', function () {
-      if (dark.classList.contains("dark--active") && delet.classList.contains("delete--show")) {
-        //console.log("dio click")
-        dark.classList.remove("dark--active");
-        delet.classList.remove("delete--show")
-      }
-    });
-
-    //console.log(nodelete);
-    nodelete.addEventListener('click', function () {
-      dark.classList.remove("dark--active");
-      delet.classList.remove("delete--show")
-      //console.log("no");
-    });*/
-
-    //ACTION TO DELETE
     deleteBtn.addEventListener('click', function () {
       if (userInfo.admin) {
         productsRef
@@ -274,7 +247,6 @@ function renderProducts(list) {
             console.error("Error removing document: ", error);
           });
       }
-
     });
 
     if (userInfo && userInfo.admin) {
@@ -343,7 +315,7 @@ getProducts();
 const filterForm = document.querySelector('.filterform');
 
 if (filterForm) {
-  filterForm.addEventListener('change', function () {
+  filterForm.addEventListener('input', function () {
 
     let copy = objectsList.slice();
 
@@ -353,7 +325,7 @@ if (filterForm) {
     switch (order) {
       case 'brand_asc':
         copy.sort(function (a, b) {
-          return a.brand - b.brand;
+          return b.brand - a.brand;
         });
         break;
       case 'price_asc':
@@ -370,7 +342,20 @@ if (filterForm) {
 
     const nameFilter = filterForm.name.value;
 
+    const typeFilter = filterForm.type.value;
+
     //FILTER
+
+    if (typeFilter != '') {
+      copy = copy.filter(function (elem) {
+        if (elem.type == typeFilter) {
+          return true;
+        }
+        return false;
+      });
+    }
+
+
     if (nameFilter != '') {
       copy = copy.filter(function (elem) {
         if (elem.title.toLowerCase().includes(nameFilter)) {
@@ -379,7 +364,10 @@ if (filterForm) {
         return false;
       });
     }
+
     renderProducts(copy);
   });
 
 }
+
+

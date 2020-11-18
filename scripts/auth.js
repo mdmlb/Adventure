@@ -63,6 +63,10 @@ firebase.auth().onAuthStateChanged(function (user) {
           getOrder();
         }
 
+        if (window.getCartdelete) {
+          getCartdelete();
+        }
+
         if(window.deleteCart){
           const bntDeleteCart = document.querySelector('.payCart__button');
 

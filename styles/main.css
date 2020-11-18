@@ -1913,6 +1913,28 @@ input[type=button] {
   margin-left: 6px;
 }
 
+.filterCont__name {
+  font-weight: 900;
+  font-size: 21px;
+}
+
+.filterTypeCont {
+  border: none;
+  height: 36px;
+  color: #4F4F4F;
+  margin-left: 8vh;
+}
+
+.filterTypeCont__radio {
+  cursor: pointer;
+  margin-left: 6px;
+}
+
+.filterTypeCont__name {
+  font-weight: 900;
+  font-size: 21px;
+}
+
 .sort {
   border: none;
   height: 36px;
@@ -2090,7 +2112,7 @@ input[type=button] {
 
 @media (max-width: 425px) {
   .container {
-    height: 23vh;
+    height: 32vh;
   }
   .filterform {
     -webkit-box-orient: vertical;
@@ -2104,8 +2126,12 @@ input[type=button] {
   .filterCont {
     margin-left: 0vh;
   }
+  .filterTypeCont {
+    margin-left: 0vh;
+    margin-top: 30px;
+  }
   .sort {
-    margin-top: 3vh;
+    margin-top: 5vh;
     margin-right: 0vh;
   }
   .location--show {
@@ -2684,7 +2710,7 @@ input[type=button] {
 }
 
 .contProducts {
-  width: 184vh;
+  width: 153vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2710,6 +2736,7 @@ input[type=button] {
 .contProducts__h {
   color: #161616;
   font-weight: 700;
+  margin-right: 15px;
 }
 
 .contProducts__line {
@@ -2721,7 +2748,8 @@ input[type=button] {
 }
 
 .contProducts__item {
-  height: 90px;
+  width: 100%;
+  height: 108px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2734,8 +2762,27 @@ input[type=button] {
           justify-content: space-between;
 }
 
+.contProducts__item .item1 {
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 95%;
+  width: 100%;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
 .contProducts__image {
-  width: 85px;
+  width: 93px;
 }
 
 .contProducts__info {
@@ -2747,6 +2794,7 @@ input[type=button] {
       -ms-flex-direction: column;
           flex-direction: column;
   color: #828282;
+  margin-left: 21px;
 }
 
 .contProducts__name {
@@ -2755,6 +2803,7 @@ input[type=button] {
 }
 
 .contProducts__info2 {
+  background-color: white;
   color: #161616;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2766,10 +2815,11 @@ input[type=button] {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 206px;
+  width: 288px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  height: 95%;
 }
 
 .contProducts__brand {
@@ -2792,23 +2842,7 @@ input[type=button] {
 
 .contProducts__price {
   font-weight: 600;
-}
-
-.item1 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 206px;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  margin-right: 15px;
 }
 
 .contTwo {
@@ -2878,6 +2912,10 @@ input[type=button] {
 }
 
 .contTotal__cTotal {
+  font-weight: 600;
+}
+
+.contTotal__cTotalTitle {
   font-weight: 600;
 }
 
@@ -3076,8 +3114,11 @@ input[type=button] {
   .contProducts {
     width: 83%;
   }
+  .contProducts__imgContainer {
+    margin-left: 21px;
+  }
   .contProducts__item {
-    height: 27vh;
+    height: 32vh;
     margin-bottom: 22px;
   }
   .contProducts .item1 {
@@ -3102,15 +3143,23 @@ input[type=button] {
     font-size: 15px;
   }
   .contProducts__info2 {
-    -webkit-box-align: unset;
-        -ms-flex-align: unset;
-            align-items: unset;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .contProducts__remove {
     font-size: 14px;
   }
   .contProducts__price {
-    font-size: 14px;
+    font-size: 21px;
+    margin-right: 0px;
   }
   .contTwo {
     width: 83%;

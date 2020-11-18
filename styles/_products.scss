@@ -34,6 +34,8 @@
 }
 
 //FILTER
+
+//Name
 .filterCont{
     border: none;
     height: 36px;
@@ -43,6 +45,29 @@
     &__radio{
        cursor: pointer; 
        margin-left: 6px;
+    }
+
+    &__name{
+        font-weight: 900;
+        font-size: 21px;    
+    }
+}
+
+//Type
+.filterTypeCont{
+    border: none;
+    height: 36px;
+    color: #4F4F4F;
+    margin-left: 8vh;
+
+    &__radio{
+       cursor: pointer; 
+       margin-left: 6px;
+    }
+
+    &__name{
+        font-weight: 900;
+        font-size: 21px;    
     }
 }
 
@@ -182,8 +207,9 @@
 @media (max-width: 425px){
 
     .container{
-        height: 23vh;
+        height: 32vh;
     }
+
     .filterform{
         flex-direction: column;
         align-items: center;
@@ -193,8 +219,13 @@
         margin-left: 0vh;
     }
 
+    .filterTypeCont{
+        margin-left: 0vh;
+        margin-top: 30px;
+    }
+
     .sort{
-        margin-top: 3vh;
+        margin-top: 5vh;
         margin-right: 0vh;
     }
 

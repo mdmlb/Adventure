@@ -71,7 +71,7 @@
 }
 
 .contProducts{
-    width: 184vh;
+    width: 153vh;
     display: flex;
     flex-direction: column;
 
@@ -85,6 +85,7 @@
     &__h{
         color: $grey;
         font-weight: 700;
+        margin-right: 15px;
     }
 
     &__line{
@@ -97,20 +98,33 @@
     }
 
     &__item{
-        height: 90px;
+        width: 100%;
+        height: 108px;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+
+        .item1{
+            background-color: white;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            height: 95%;
+            width: 100%;
+            justify-content: end;
+        }
     }
 
     &__image{
-        width: 85px;
+        width: 93px;
     }
 
     &__info{
         display: flex;
         flex-direction: column;
         color: $grey2;
+        margin-left: 21px;
+
     }
 
     &__name{
@@ -120,12 +134,14 @@
 
 
     &__info2{
+        background-color: white;
         color: $grey;
         display: flex;
         flex-direction: row;
         align-items: center;
-        width: 206px;
+        width: 288px;
         justify-content: space-between;
+        height: 95%;
     }
 
     &__brand{
@@ -148,16 +164,9 @@
 
     &__price{
         font-weight: 600;
+        margin-right: 15px;
     }
     
-}
-
-.item1{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 206px;
-    justify-content: space-between;
 }
 
 .contTwo{
@@ -208,6 +217,10 @@
     }
 
     &__cTotal{
+        font-weight: 600;
+    }
+
+    &__cTotalTitle{
         font-weight: 600;
     }
 }
@@ -374,8 +387,12 @@
     .contProducts{
         width: 83%;
 
+        &__imgContainer{
+            margin-left: 21px;
+        }
+
         &__item{
-            height: 27vh;
+            height: 32vh;
             margin-bottom: 22px;
         }
 
@@ -398,7 +415,9 @@
         }
 
         &__info2{
-            align-items: unset;
+            align-items: center;
+            flex-direction: column-reverse;
+            justify-content: center;
         }
 
         &__remove{
@@ -406,7 +425,8 @@
         }
 
         &__price{
-            font-size: 14px;
+            font-size: 21px;
+            margin-right: 0px;
         }
     }
     .contTwo{
