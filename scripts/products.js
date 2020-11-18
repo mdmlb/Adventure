@@ -325,7 +325,7 @@ if (filterForm) {
     switch (order) {
       case 'brand_asc':
         copy.sort(function (a, b) {
-          return b.brand - a.brand;
+          return b.brand.localeCompare(a.brand);
         });
         break;
       case 'price_asc':
