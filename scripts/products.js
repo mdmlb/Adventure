@@ -115,10 +115,10 @@ function renderProducts(list) {
 
         setTimeout(function () {
           location.classList.remove("location--show");
-        }, 2500);
+        }, 1500);
       }
 
-      if(userInfo.uid){
+      if (userInfo.uid) {
         noti.classList.remove("hidden");
 
         setTimeout(function () {
@@ -139,7 +139,7 @@ function renderProducts(list) {
     //ACTION TO EDIT
     const editBtn = document.querySelector('.editItem');
 
-    const images = editBtn.querySelectorAll('.editItem__input');
+    const images = document.querySelectorAll('.editItem__input');
 
     images.forEach(function (group, index) {
       group.addEventListener('change', function () {
@@ -221,41 +221,45 @@ function renderProducts(list) {
 
     });
 
-    exit.addEventListener('click', function () {
-      if (dark.classList.contains("dark--active") && edit.classList.contains("edit--show")) {
-        dark.classList.remove("dark--active");
-        edit.classList.remove("edit--show")
-      }
+    if (edit) {
+      exit.addEventListener('click', function () {
+        if (dark.classList.contains("dark--active") && edit.classList.contains("edit--show")) {
+          dark.classList.remove("dark--active");
+          edit.classList.remove("edit--show")
+        }
+      });
+   
+    
 
-    });
-
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    //DELETE  
-    const deleteBtn = newProduct.querySelector('.product__delete');
-    deleteBtn.addEventListener('click', function () {
-      if (userInfo.admin) {
-        productsRef
-          .doc(elem.id)
-          .delete()
-          .then(function () {
-            console.log("Document successfully deleted!");
-            getProducts();
-          })
-          .catch(function (error) {
-            console.error("Error removing document: ", error);
-          });
-      }
-    });
-
-    if (userInfo && userInfo.admin) {
-      deleteBtn.classList.remove('hidden');
-      editactive.classList.remove('hidden');
     }
+ 
 
-    productsList.appendChild(newProduct);
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  //DELETE  
+  const deleteBtn = newProduct.querySelector('.product__delete');
+  deleteBtn.addEventListener('click', function () {
+    if (userInfo.admin) {
+      productsRef
+        .doc(elem.id)
+        .delete()
+        .then(function () {
+          console.log("Document successfully deleted!");
+          getProducts();
+        })
+        .catch(function (error) {
+          console.error("Error removing document: ", error);
+        });
+    }
   });
+
+  if (userInfo && userInfo.admin) {
+    deleteBtn.classList.remove('hidden');
+    editactive.classList.remove('hidden');
+  }
+
+  productsList.appendChild(newProduct);
+});
 }
 
 let objectsList = [];
@@ -325,7 +329,7 @@ if (filterForm) {
     switch (order) {
       case 'brand_asc':
         copy.sort(function (a, b) {
-          return b.brand.localeCompare(a.brand);
+          return a.brand.localeCompare(b.brand);
         });
         break;
       case 'price_asc':

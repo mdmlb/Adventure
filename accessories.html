@@ -57,6 +57,41 @@
         <article class="containerAccessories">
 
             <form class="filterform Accessories">
+
+                <!--BRAND-->
+                <div class="filterCont hidden">
+                    <h4 class="filterCont__name">Filter by brand</h4>
+                    <label>
+                        <input type="radio" name="name" value="" checked class="filterCont__radio">
+                        View all
+                    </label>
+                    <label>
+                        <input type="radio" name="name" value="nikon" class="filterCont__radio">
+                        Nikon
+                    </label>
+                    <label>
+                        <input type="radio" name="name" value="canon" class="filterCont__radio">
+                        Canon
+                    </label>
+                </div>
+
+                <!--TYPE-->
+                <div class="filterTypeCont hidden">
+                    <h4 class="filterTypeCont__name">Filter by type</h4>
+                    <label>
+                        <input type="radio" name="type" value="" checked class="filterTypeCont__radio">
+                        View all
+                    </label>
+                    <label>
+                        <input type="radio" name="type" value="Reflex" class="filterTypeCont__radio">
+                        Reflex
+                    </label>
+                    <label>
+                        <input type="radio" name="type" value="Manual" class="filterTypeCont__radio">
+                        Manual
+                    </label>
+                </div>
+
                 <!--Sort-->
                 <select name="sort" class="sort">
                     <option value="">Sort by</option>
@@ -159,6 +194,69 @@
             </div>
         </section>
     </div>
+
+        <!-- Edit item -->
+        <section class="edit">
+
+            <form class="editItem">
+    
+                <img class="editItem__exit" src="./resources/exit.png" alt="">
+    
+                <h2 class="editItem__title">Edit item</h2>
+    
+                <div class="editItem__cont">
+    
+                    <label class="editItem__label">
+                        <input type="text" name="title" placeholder="Title" class="input">
+                    </label>
+    
+                    <label class="editItem__label">
+                        <input type="text" name="price" placeholder="Price" class="input">
+                    </label>
+    
+                    <label class="editItem__label">
+                        <input type="text" name="description" placeholder="Description" class="input">
+                    </label>
+    
+                    <label class="editItem__label">
+                        <input type="text" name="brand" placeholder="Brand" class="input">
+                    </label>
+    
+                    <label class="editItem__label">
+                        <input type="text" name="type" placeholder="Type" class="input">
+                    </label>
+    
+                    <select name="option" id="" class="editItem__option">
+                        <option value="camera">Camera</option>
+                    </select>
+    
+                    <div class="editItem__contTwo">
+                        <label class="editItem__upload">
+                            <input type="file" name="image" placeholder="Upload photos" class="editItem__input">
+                        </label>
+    
+                        <label class="editItem__upload">
+                            <input type="file" name="image" placeholder="Upload photos" class="editItem__input">
+                        </label>
+    
+                        <label class="editItem__upload">
+                            <input type="file" name="image" placeholder="Upload photos" class="editItem__input">
+                        </label>
+                    </div>
+    
+                </div>
+    
+                <p class="editItem__p">If you upload more photos, the previous ones will be deleted.</p>
+                <p class="editItem__p">Remember to fill in all the parameters</p>
+    
+                <button class="button">
+                    Edit
+                </button>
+    
+            </form>
+    
+        </section>
+    
 
     <!--Product add to cart-->
     <img src="./resources/location.png" alt="" class="location">

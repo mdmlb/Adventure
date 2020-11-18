@@ -17,6 +17,7 @@ window.addEventListener('load', function () {
     const img3 = document.querySelector('.thumbs__img3');
     const pimage = document.querySelector('.contImage__image');
     const thumbs = document.querySelectorAll('.thumbs__imgcont');
+    const location = document.querySelector('.location');
 
     console.log(product);
 
@@ -58,6 +59,14 @@ window.addEventListener('load', function () {
     const addBtn = document.querySelector('.button__userAddDetail');
     addBtn.addEventListener('click', function () {
       getCart();
+
+      if (userInfo.uid) {
+        location.classList.add("location--show");
+
+        setTimeout(function () {
+          location.classList.remove("location--show");
+        }, 1500);
+      }
     });
 
     function carList(pList) {
